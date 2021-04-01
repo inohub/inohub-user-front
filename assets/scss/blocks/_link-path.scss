@@ -1,0 +1,23 @@
+.link-path {
+  display: flex;
+  align-items: center;
+
+  & > * {
+    @include text-style(1.4rem, 500, #9b9b9b);
+    position: relative;
+
+    &:not(:last-child) {
+      margin-right: 30px;
+      &:after {
+        content: '';
+        position: absolute;
+        right: -18px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 6px;
+        height: 10px;
+        background-image: url("../assets/img/icons/arrow-right.svg");
+      }
+    }
+  }
+}

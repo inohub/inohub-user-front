@@ -1,30 +1,28 @@
 <template>
   <main class="main">
 
-    <section class="main__section welcome-section">
-      <div class="welcome-section__container">
-        <div class="welcome-section__info">
-          <h1 class="welcome-section__title">
-            Одним словом
-            про inohub
-          </h1>
+    <section class="main__section startup-welcome">
 
-          <p class="welcome-section__subtitle">
-            Тут рандомная картинка, не обращайте
-            внимания. И еще текста для красоты
-          </p>
+      <div class="startup-welcome__container">
 
-          <div class="welcome-section__btn-group">
-            <button class="welcome-section__btn button">
-              Подробнее
-            </button>
-            <button class="welcome-section__btn button">
-              С чего начать?
-            </button>
-          </div>
+        <h1 class="startup-welcome__heading">
+          Стартапы
+        </h1>
+
+        <div class="startup-welcome__tabs tabs">
+
+          <div class="tabs__item">Бизнес</div>
+          <div class="tabs__item">Игры</div>
+          <div class="tabs__item">Музыка</div>
+          <div class="tabs__item">Технологии</div>
+          <div class="tabs__item">Бизнес</div>
+          <div class="tabs__item">Игры</div>
+          <div class="tabs__item">Музыка</div>
+          <div class="tabs__item">Технологии</div>
+          <div class="tabs__item">Бизнес</div>
+
         </div>
 
-        <img src="../assets/img/welcome-person.png" alt="" class="welcome-section__side-person">
       </div>
     </section>
 
@@ -541,8 +539,8 @@
               <!-- Add Pagination -->
               <div class="swiper-pagination courses-section__pagination"></div>
               <!-- Add Arrows -->
-<!--              <div class="swiper-button-next courses-section__next"></div>-->
-<!--              <div class="swiper-button-prev courses-section__prev"></div>-->
+              <!--              <div class="swiper-button-next courses-section__next"></div>-->
+              <!--              <div class="swiper-button-prev courses-section__prev"></div>-->
             </div>
           </div>
         </div>
@@ -925,7 +923,7 @@
 
           <div class="cards-section__row">
             <h4 class="cards-section__title">Рекомендованное вам</h4>
-            <nuxt-link tag="button" to="/Startups" class="cards-section__btn button-outline">Смотреть все</nuxt-link>
+            <button class="cards-section__btn button-outline">Смотреть все</button>
           </div>
 
           <div class="cards-section__slide-wrapper">
@@ -1105,7 +1103,3 @@ export default {
   }
 };
 </script>
-
-<style lang="scss">
-
-</style>

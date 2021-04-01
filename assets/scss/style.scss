@@ -12,7 +12,24 @@
 @import "abstracts/animations";
 
 // blocks
-
+@import "blocks/container";
+@import "blocks/header";
+@import "blocks/main";
+@import "blocks/welcome-section";
+@import "blocks/button";
+@import "blocks/cards-section";
+@import "blocks/card";
+@import "blocks/link-path";
+@import "blocks/fluid-section";
+@import "blocks/courses-section";
+@import "blocks/button-outline";
+@import "blocks/course-card";
+@import "blocks/rate-stars";
+@import "blocks/footer";
+@import "blocks/startup-welcome";
+@import "blocks/tabs";
+@import "blocks/auth";
+@import "blocks/input-box";
 
 html, body {
   font-size: 62.5%;

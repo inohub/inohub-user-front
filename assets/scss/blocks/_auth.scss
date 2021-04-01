@@ -1,0 +1,100 @@
+.auth {
+  height: calc(100vh - 72px);
+  background-image: url("../assets/img/orange-bg.png");
+  background-color: #ffb463;
+  background-size: cover;
+  background-position: center;
+
+  &__container {
+    @extend %container;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  &__info {
+
+  }
+
+  &__heading {
+    @include text-style(6.4rem, 700, $white-color);
+    line-height: 64px;
+    margin-bottom: 20px;
+  }
+
+  &__subtitle {
+    @include text-style(3rem, 500, $white-color);
+    line-height: 35px;
+  }
+
+  &__box {
+    width: 500px;
+    padding: 40px 60px;
+    border-radius: 26px;
+    background-color: rgba($white-color, .5);
+  }
+
+  &__title {
+    @include text-style(2.4rem, 600, $text-color);
+    text-align: center;
+    margin-bottom: 18px;
+  }
+
+  &__text {
+    @include text-style(1.6rem, 400, $text-color);
+    text-align: center;
+    margin-bottom: 18px;
+  }
+
+  &__link:link,
+  &__link:visited {
+    @include text-style(1.6rem, 500, #8c30f5);
+  }
+
+  &__input-group {
+    margin-bottom: 38px;
+  }
+
+  &__input-box {
+    &:not(:last-child) {
+      margin-bottom: 14px;
+    }
+  }
+
+  &__btn {
+    display: block;
+    margin: 0 auto 20px;
+    width: 305px;
+    height: 43px;
+
+    background: $main-color;
+    border: 1px solid #0001FC;
+    box-shadow: 0 4px 8px rgba(211, 38, 38, 0.25);
+    border-radius: 25px;
+
+    @include text-style(1.8rem, 700, $white-color);
+  }
+
+  &__socials {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 82px;
+    height: 57px;
+    background-color: $white-color;
+    border-radius: 15px;
+    cursor: pointer;
+
+    &:not(:last-child) {
+      margin-right: 14px;
+    }
+  }
+}

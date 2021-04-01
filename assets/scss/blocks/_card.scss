@@ -1,0 +1,82 @@
+.card {
+
+  $e: &;
+
+  width: 541px;
+  border-radius: 6px;
+  overflow: hidden;
+  background-color: $white-color;
+
+  &--sm {
+    display: flex;
+    align-items: flex-start;
+    height: 125px;
+    width: 445px;
+
+    #{$e}__info {
+      padding: 19px 13px 10px 24px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    #{$e}__title {
+      @include text-style(1.4rem, 500, $text-color);
+    }
+
+    #{$e}__desc {
+      @include text-style(1.1rem, 400, $text-color);
+      line-height: 13px;
+    }
+  }
+
+  &__img {
+
+  }
+
+  &__info {
+    padding: 22px 24px 12px;
+    position: relative;
+  }
+
+  &__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+
+  &__path {
+
+  }
+
+  &__date {
+    @include text-style(1.4rem, 500, #9b9b9b);
+  }
+
+  &__title {
+    @include text-style(2.4rem, 600, $text-color);
+    max-width: 350px;
+    margin-bottom: 5px;
+  }
+
+  &__desc {
+    @include text-style(1.6rem, 400, $text-color);
+    line-height: 19px;
+    max-width: 320px;
+  }
+
+  &__favorite {
+    position: absolute;
+    right: 24px;
+    bottom: 12px;
+    cursor: pointer;
+  }
+
+  &__link {
+    @include text-style(1.1rem, 500, #10B5FD);
+  }
+
+
+}

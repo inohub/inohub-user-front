@@ -1,0 +1,41 @@
+.fluid-section {
+  $e: &;
+
+  padding: 60px 0;
+  background-color: #ffb463;
+
+  &--purple {
+    background-color: $main-color;
+    #{$e}__btn {
+      background-color: #FFB463;
+
+      &--md {
+        width: 241px;
+      }
+    }
+  }
+
+  &__container {
+    @extend %container;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__info {
+
+  }
+
+  &__heading {
+    @include text-style(5.5rem, 700, $white-color);
+    line-height: 50px;
+    margin-bottom: 30px;
+  }
+
+  &__btn {
+
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+}

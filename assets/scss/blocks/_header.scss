@@ -1,0 +1,73 @@
+.header {
+  padding: 13px 0;
+  background-color: $white-color;
+
+  &__container {
+    @extend %container;
+    display: flex;
+    align-items: center;
+  }
+
+  &__logo {
+    margin-right: 64px;
+  }
+
+  &__search-box {
+    position: relative;
+    width: 314px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+
+    padding: 0 47px;
+
+    border: .5px solid #8E8E93;
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.05);
+    border-radius: 23px;
+
+    margin-right: 60px;
+  }
+
+  &__search-icon {
+    margin-right: 15px;
+    cursor: pointer;
+  }
+
+  &__search-input {
+    @include text-style(1.6rem, 400, #0A1034);
+  }
+
+  &__links {
+    display: flex;
+    align-items: center;
+    margin-right: 36px;
+  }
+
+  &__link {
+    @include text-style(1.4rem, 600, #18191F);
+
+    &--blue {
+      color: #00B0FC;
+    }
+
+    &:not(:last-child) {
+      margin-right: 32px;
+    }
+  }
+
+  &__notifications {
+    margin-right: 20px;
+  }
+
+  &__bell {
+    cursor: pointer;
+  }
+
+  &__user-box {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+
+    cursor: pointer;
+  }
+}

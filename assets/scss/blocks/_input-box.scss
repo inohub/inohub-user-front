@@ -1,0 +1,13 @@
+.input-box {
+
+  width: 100%;
+  background-color: $white-color;
+  border-radius: 4px;
+  padding: 19px 45px;
+
+  &__input {
+    width: 100%;
+    background-color: transparent;
+    @include text-style(1.8rem, 400, $text-color);
+  }
+}

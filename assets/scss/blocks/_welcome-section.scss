@@ -1,0 +1,48 @@
+.welcome-section {
+
+  height: calc(100vh - 72px);
+  background-image: url("../assets/img/welcome-section-bg.png");
+  background-size: cover;
+  background-position: center;
+
+  &__container {
+    @extend %container;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  &__info {
+    height: 100%;
+    width: 491px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  &__title {
+    @include text-style(7.2rem, 700, $white-color);
+    line-height: 70px;
+    margin-bottom: 27px;
+  }
+
+  &__subtitle {
+    @include text-style(2.4rem, 500, $white-color);
+    line-height: 23px;
+    margin-bottom: 25px;
+  }
+
+  &__btn-group {
+    display: flex;
+    align-items: center;
+  }
+
+  &__btn {
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+}

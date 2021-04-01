@@ -1,0 +1,21 @@
+.startup-welcome {
+  height: calc(100vh - 72px);
+  background-image: url("../assets/img/orange-bg.png");
+  background-color: #ffb463;
+  background-size: cover;
+  background-position: center;
+
+  &__container {
+    @extend %container;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__heading {
+    @include text-style(7.2rem, 700, $white-color);
+    margin-bottom: 75px;
+  }
+}

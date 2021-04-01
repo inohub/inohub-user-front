@@ -1,0 +1,8 @@
+.button-outline {
+  width: 116px;
+  height: 32.5px;
+  border-radius: 20px;
+  border: 0.8px solid #00B0FC;
+  @include text-style(1.2rem, 600, #10B5FD);
+  background-color: transparent;
+}

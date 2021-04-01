@@ -1,0 +1,26 @@
+.tabs {
+  max-width: 765px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+
+
+  &__item {
+    padding: 12px 20px;
+    border-radius: 60px;
+    background-color: rgba($white-color, .3);
+    @include text-style(2.5rem, 500, $white-color);
+    cursor: pointer;
+    transition: all .2s;
+    margin-bottom: 24px;
+
+    &:hover {
+      background-color: $main-color;
+    }
+
+    &:not(:last-child) {
+      margin-right: 24px;
+    }
+  }
+}

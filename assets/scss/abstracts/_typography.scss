@@ -1,4 +1,4 @@
 .heading-medium {
-  @include text-style(4.8rem, 700, $accent-color);
+  @include text-style(4.8rem, 700, $text-color);
   position: relative;
 }
