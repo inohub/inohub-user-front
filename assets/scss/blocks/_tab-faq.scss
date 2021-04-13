@@ -1,0 +1,38 @@
+.tab-faq {
+
+  &__item {
+    padding: 40px 65px;
+    border-radius: 10px;
+    border: 1px solid #DADADA;
+    cursor: pointer;
+
+
+    &:not(:last-child) {
+      margin-bottom: 15px;
+    }
+  }
+
+  &__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__title {
+    @include text-style(2.4rem, 600, #545454);
+  }
+
+  &__icon {
+
+    &--active {
+      transform: rotate(180deg);
+    }
+  }
+
+  &__text {
+    @include text-style(1.8rem, 400, #545454);
+    line-height: 21px;
+    margin-top: 20px;
+  }
+}
+

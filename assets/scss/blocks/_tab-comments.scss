@@ -1,0 +1,26 @@
+.tab-comments {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+
+  &__main {
+    width: 665px;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 8px;
+    }
+  }
+
+  &__text {
+    @include text-style(1.6rem, 400, #545454);
+    line-height: 21px;
+    width: 340px;
+
+    span {
+      color: #00B0FC;
+      cursor: pointer;
+    }
+  }
+}

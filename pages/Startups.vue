@@ -9,17 +9,17 @@
           Стартапы
         </h1>
 
-        <div class="startup-welcome__tabs tabs">
+        <div class="startup-welcome__categories categories">
 
-          <div class="tabs__item">Бизнес</div>
-          <div class="tabs__item">Игры</div>
-          <div class="tabs__item">Музыка</div>
-          <div class="tabs__item">Технологии</div>
-          <div class="tabs__item">Бизнес</div>
-          <div class="tabs__item">Игры</div>
-          <div class="tabs__item">Музыка</div>
-          <div class="tabs__item">Технологии</div>
-          <div class="tabs__item">Бизнес</div>
+          <div class="categories__item">Бизнес</div>
+          <div class="categories__item">Игры</div>
+          <div class="categories__item">Музыка</div>
+          <div class="categories__item">Технологии</div>
+          <div class="categories__item">Бизнес</div>
+          <div class="categories__item">Игры</div>
+          <div class="categories__item">Музыка</div>
+          <div class="categories__item">Технологии</div>
+          <div class="categories__item">Бизнес</div>
 
         </div>
 

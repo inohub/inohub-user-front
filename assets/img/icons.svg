@@ -78,4 +78,8 @@
   <symbol id="path-chevron" viewBox="0 0 6 10">
     <path fill-rule="evenodd" clip-rule="evenodd" d="M0 1.16667L1.13514 0L6 5L1.13514 10L0 8.83333L3.72973 5L0 1.16667Z" fill="#9B9B9B"/>
   </symbol>
+
+  <symbol id="faq-chevron" viewBox="0 0 33 22">
+    <path fill-rule="evenodd" clip-rule="evenodd" d="M28.3833 1L32 4.78378L16.5 21L1 4.78378L4.61667 0.999999L16.5 13.4324L28.3833 1Z" fill="#9B9B9B" stroke="#F4F4F4"/>
+  </symbol>
 </svg>
