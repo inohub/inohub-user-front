@@ -1,0 +1,31 @@
+.startup-page {
+  padding: 22px 0 60px;
+  background-color: #E5E5E5;
+
+  &__container {
+    @extend %container;
+  }
+
+  &__path-history {
+    margin-bottom: 34px;
+  }
+
+  &__heading-box {
+    text-align: center;
+    margin-bottom: 35px;
+  }
+
+  &__heading {
+    @include text-style(3rem, 600, $text-color);
+    margin-bottom: 20px;
+  }
+
+  &__subtitle {
+    @include text-style(2rem, 400, #545454);
+    line-height: 22px;
+  }
+
+  &__wrapper {
+
+  }
+}

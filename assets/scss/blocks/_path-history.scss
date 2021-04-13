@@ -1,0 +1,27 @@
+.path-history {
+  display: flex;
+  align-items: center;
+
+  &__item {
+    @include text-style(1.6rem, 500, #9B9B9B);
+
+    &:not(:last-child) {
+      position: relative;
+      margin-right: 24px;
+
+      &:after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: calc(100% + 12px);
+        width: 6px;
+        height: 10px;
+        background-image: url("../assets/img/icons/path-chevron.svg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+      }
+    }
+  }
+}
