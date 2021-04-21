@@ -1067,10 +1067,31 @@
 </template>
 
 <script>
+import axios from 'axios';
+
 import Swiper, {Pagination, Navigation} from 'swiper';
 
 Swiper.use([Pagination, Navigation]);
+
 export default {
+  middleware: ['check-auth', 'auth'],
+  data() {
+    return {
+      token: "",
+      config: {
+        method: 'get',
+        url: 'https://api.inohub.kz/api/startups',
+        headers: {
+          'Authorization': 'Bearer ' + this.token,
+        }
+      },
+    };
+  },
+
+  methods: {
+  },
+  created() {
+  },
 
   mounted() {
     var swiper1 = new Swiper('.cards-section__swiper-container', {

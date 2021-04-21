@@ -23,24 +23,24 @@
         </div>
 
         <div class="auth__input-group">
+          <!--          <div class="auth__input-box input-box">-->
+          <!--            <input type="text" class="input-box__input" placeholder="Имя">-->
+          <!--          </div>-->
+
           <div class="auth__input-box input-box">
-            <input type="text" class="input-box__input" placeholder="Имя">
+            <input type="text" class="input-box__input" placeholder="Email" v-model="email">
           </div>
 
           <div class="auth__input-box input-box">
-            <input type="text" class="input-box__input" placeholder="Email">
+            <input type="text" class="input-box__input" placeholder="Пароль" v-model="password">
           </div>
 
           <div class="auth__input-box input-box">
-            <input type="text" class="input-box__input" placeholder="Пароль">
-          </div>
-
-          <div class="auth__input-box input-box">
-            <input type="text" class="input-box__input" placeholder="Пароль">
+            <input type="text" class="input-box__input" placeholder="Подтверждение пароля">
           </div>
         </div>
 
-        <button class="auth__btn">Зарегистрироваться</button>
+        <button class="auth__btn" @click="register">Зарегистрироваться</button>
 
         <div class="auth__text">
           Или зарегистрируйтесь через
@@ -64,5 +64,30 @@
 </template>
 
 <script>
-export default {}
+export default {
+  data() {
+    return {
+      email: "",
+      password: "",
+      errorMessage: "",
+      data: ""
+    };
+  },
+  methods: {
+    register() {
+      this.$axios.post("https://api.inohub.kz/api/auth/registration", {
+        email: this.email,
+        password: this.password
+      })
+        .then(response => {
+          this.data = response;
+          console.log(response);
+        })
+        .catch(error => {
+          this.errorMessage = error.message;
+          console.log("ERROR!", error.message);
+        });
+    }
+  }
+}
 </script>

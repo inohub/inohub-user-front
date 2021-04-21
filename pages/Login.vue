@@ -24,15 +24,15 @@
 
         <div class="auth__input-group">
           <div class="auth__input-box input-box">
-            <input type="text" class="input-box__input" placeholder="Имя">
+            <input type="text" class="input-box__input" placeholder="E-mail" v-model="email">
           </div>
 
           <div class="auth__input-box input-box">
-            <input type="text" class="input-box__input" placeholder="Пароль">
+            <input type="text" class="input-box__input" placeholder="Пароль" v-model="password">
           </div>
         </div>
 
-        <button class="auth__btn">Войти</button>
+        <button class="auth__btn" @click="login">Войти</button>
 
         <div class="auth__text">
           Или войдите через
@@ -56,5 +56,32 @@
 </template>
 
 <script>
-export default {}
+export default {
+  data() {
+    return {
+      email: "",
+      password: ""
+    };
+  },
+  methods: {
+    login() {
+      this.$store.dispatch('authenticateUser', {
+        email: this.email,
+        password: this.password
+      })
+      .then(() => {
+        this.$router.push('/')
+      })
+      .catch(e => console.log(e))
+    },
+    // test() {
+    //   this.$axios.post('https://api.inohub.kz/api/auth/login', {
+    //     email: this.email,
+    //     password: this.password
+    //   })
+    //   .then(res => console.log(res.data.data.access_token))
+    //   .catch(e => console.log(e))
+    // }
+  }
+}
 </script>

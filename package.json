@@ -14,6 +14,7 @@
     "@nuxtjs/axios": "^5.11.0",
     "@nuxtjs/pwa": "^3.0.0-beta.20",
     "imask": "^6.0.7",
+    "js-cookie": "^2.2.1",
     "nuxt": "^2.13.0",
     "nuxt-i18n": "^6.20.0",
     "swiper": "^6.4.11",
