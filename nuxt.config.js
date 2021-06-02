@@ -86,6 +86,10 @@ export default {
   ** Build configuration
   ** See https://nuxtjs.org/api/configuration-build/
   */
+  transition: {
+    name: 'fade',
+    mode: 'out-in'
+  },
   build: {},
   router: {
     linkActiveClass: 'active_link',

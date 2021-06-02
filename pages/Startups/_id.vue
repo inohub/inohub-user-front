@@ -191,11 +191,11 @@
               <div class="tab-comments__main">
 
                 <div class="tab-comments__item comment-box">
-                  <div class="comment-box__row">
-                    <img src="../../assets/img/avatar.png" alt="" class="comment-box__avatar">
-                    <div class="comment-box__info">
-                      <div class="comment-box__name">Имя Фамилия</div>
-                      <div class="comment-box__time">2 часа назад</div>
+                  <div class="comment-box__row user-box">
+                    <img src="../../assets/img/avatar.png" alt="" class="user-box__avatar">
+                    <div class="user-box__info">
+                      <div class="user-box__name">Имя Фамилия</div>
+                      <div class="user-box__time">2 часа назад</div>
                     </div>
                   </div>
 
@@ -203,11 +203,11 @@
                 </div>
 
                 <div class="tab-comments__item comment-box comment-box--author comment-box--reply">
-                  <div class="comment-box__row">
-                    <img src="../../assets/img/avatar.png" alt="" class="comment-box__avatar">
-                    <div class="comment-box__info">
-                      <div class="comment-box__name">Имя Фамилия</div>
-                      <div class="comment-box__time">2 часа назад</div>
+                  <div class="comment-box__row user-box">
+                    <img src="../../assets/img/avatar.png" alt="" class="user-box__avatar">
+                    <div class="user-box__info">
+                      <div class="user-box__name">Имя Фамилия</div>
+                      <div class="user-box__time">2 часа назад</div>
                     </div>
 
                     <div class="comment-box__label">
@@ -219,11 +219,11 @@
                 </div>
 
                 <div class="tab-comments__item comment-box">
-                  <div class="comment-box__row">
-                    <img src="../../assets/img/avatar.png" alt="" class="comment-box__avatar">
-                    <div class="comment-box__info">
-                      <div class="comment-box__name">Имя Фамилия</div>
-                      <div class="comment-box__time">2 часа назад</div>
+                  <div class="comment-box__row user-box">
+                    <img src="../../assets/img/avatar.png" alt="" class="user-box__avatar">
+                    <div class="user-box__info">
+                      <div class="user-box__name">Имя Фамилия</div>
+                      <div class="user-box__time">2 часа назад</div>
                     </div>
                   </div>
 
@@ -231,11 +231,11 @@
                 </div>
 
                 <div class="tab-comments__item comment-box comment-box--reply">
-                  <div class="comment-box__row">
-                    <img src="../../assets/img/avatar.png" alt="" class="comment-box__avatar">
-                    <div class="comment-box__info">
-                      <div class="comment-box__name">Имя Фамилия</div>
-                      <div class="comment-box__time">2 часа назад</div>
+                  <div class="comment-box__row user-box">
+                    <img src="../../assets/img/avatar.png" alt="" class="user-box__avatar">
+                    <div class="user-box__info">
+                      <div class="user-box__name">Имя Фамилия</div>
+                      <div class="user-box__time">2 часа назад</div>
                     </div>
                   </div>
 

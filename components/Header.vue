@@ -16,7 +16,7 @@
         <a href="#" class="header__link">О нас</a>
         <a href="#" class="header__link">Новости</a>
         <nuxt-link to="/Startups" tag="a" class="header__link">Стартапы</nuxt-link>
-        <nuxt-link tag="a" to="/Startups" class="header__link">Курсы</nuxt-link>
+        <nuxt-link tag="a" to="/Courses" class="header__link">Курсы</nuxt-link>
         <a href="#" class="header__link header__link--blue">Загрузить проект</a>
         <a @click="logout" class="header__link header__link--blue">Выйти</a>
       </div>

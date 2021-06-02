@@ -1,0 +1,114 @@
+.course-materials {
+
+  $e: &;
+
+  &__item {
+    padding: 20px 35px 20px 50px;
+    background-color: $white-color;
+    border-radius: 7px;
+    border-left: 17px solid #DADADA;
+
+    &--active {
+
+      border-color: $main-color;
+
+      transition: all .3s;
+
+      #{$e}__title {
+        color: $text-color;
+        transition: all .3s;
+      }
+
+      #{$e}__icon {
+        transition: all .3s;
+        &:first-child {
+          fill: #10B5FD;
+          pointer-events: unset;
+          cursor: pointer;
+        }
+
+        &:last-child {
+          fill: #2E3A59;
+          transform: rotate(90deg);
+        }
+      }
+
+      #{$e}__file-list {
+        transition: all .3s;
+        margin-top: 25px;
+        height: unset;
+        overflow: visible;
+      }
+    }
+  }
+
+  &__row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__title {
+    @include text-style(2.4rem, 500, #9b9b9b);
+  }
+
+  &__icon-group {
+    display: flex;
+    align-items: center;
+  }
+
+  &__icon {
+    &:not(:last-child) {
+      margin-right: 17px;
+    }
+
+    &:first-child {
+      fill: #B6B6B6;
+      pointer-events: none;
+
+      &:hover {
+        fill: #10B5FD;
+      }
+    }
+
+    &:last-child {
+      fill: #B6B6B6;
+      cursor: pointer;
+      &:hover {
+        fill: #2E3A59;
+      }
+    }
+  }
+
+  &__file-list {
+    display: flex;
+    align-items: center;
+    margin-top: 0;
+    height: 0;
+    overflow: hidden;
+
+    &--active {
+      margin-top: 25px;
+      height: unset;
+      overflow: visible;
+    }
+  }
+
+  &__file {
+    width: 50px;
+    text-align: center;
+
+    &:not(:last-child) {
+      margin-right: 35px;
+    }
+
+    svg {
+      margin-bottom: 7px;
+    }
+
+    span {
+      @include text-style(1rem, 500, $text-color);
+      line-height: 11px;
+    }
+  }
+}

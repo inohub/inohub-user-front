@@ -5,4 +5,9 @@
   border-radius: 8px;
 
   @include text-style(2rem, 700, $white-color);
+
+  &--sm {
+    width: 177px;
+    height: 47px;
+  }
 }

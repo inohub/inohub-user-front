@@ -1,0 +1,41 @@
+.side-box {
+  width: 325px;
+  padding-top: 68px;
+
+  &__user-box {
+    margin-bottom: 15px;
+  }
+
+  &__text {
+    @include text-style(1.6rem, 400, #545454);
+    line-height: 18.5px;
+
+    padding-bottom: 35px;
+    margin-bottom: 35px;
+    border-bottom: 1px solid #DADADA;
+  }
+
+  &__tab-links {
+
+  }
+
+  &__title {
+    @include text-style(1.8rem, 700, #545454);
+    margin-bottom: 20px;
+  }
+
+  &__tab-list {
+
+  }
+
+  &__tab {
+    display: inline-block;
+    @include text-style(1.4rem, 500, #545454);
+    padding: 4px 20px;
+    border-radius: 30px;
+    background-color: #DADADA;
+
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+}

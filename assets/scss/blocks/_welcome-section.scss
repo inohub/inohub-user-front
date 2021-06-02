@@ -5,6 +5,10 @@
   background-size: cover;
   background-position: center;
 
+  &--orange-bg {
+    background-image: url("../assets/img/welcome-section-bg2.png");
+  }
+
   &__container {
     @extend %container;
     position: relative;

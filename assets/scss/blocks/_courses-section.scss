@@ -2,6 +2,10 @@
   padding: 60px 0;
   background-color: #f4f4f4;
 
+  &--grey-bg {
+    background-color: #e5e5e5;
+  }
+
   &__container {
     @extend %container;
     padding-right: 40px;

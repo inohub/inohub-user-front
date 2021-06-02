@@ -1,5 +1,5 @@
 <template>
-  <main class="main">
+  <div class="main">
 
     <section class="main__section startup-welcome">
 
@@ -34,7 +34,7 @@
           </div>
           <div class="cards-section__card card">
 
-            <img src="../assets/img/card-img.png" alt="" class="card__img">
+            <img src="../../assets/img/card-img.png" alt="" class="card__img">
 
             <div class="card__info">
               <div class="card__row">
@@ -55,7 +55,7 @@
               </p>
 
               <svg class="card__favorite" width="17" height="28">
-                <use href="../assets/img/icons.svg#favorite"></use>
+                <use href="../../assets/img/icons.svg#favorite"></use>
               </svg>
             </div>
 
@@ -75,7 +75,7 @@
             <div class="swiper-container cards-section__swiper-container">
               <div class="swiper-wrapper">
                 <div class="swiper-slide card card--sm">
-                  <img src="../assets/img/card-img-sm.png" alt="" class="card__img">
+                  <img src="../../assets/img/card-img-sm.png" alt="" class="card__img">
 
                   <div class="card__info">
                     <div class="card__text-box">
@@ -90,12 +90,12 @@
                     <a href="#" class="card__link">Категория</a>
 
                     <svg class="card__favorite" width="11" height="18">
-                      <use href="../assets/img/icons.svg#favorite"></use>
+                      <use href="../../assets/img/icons.svg#favorite"></use>
                     </svg>
                   </div>
                 </div>
                 <div class="swiper-slide card card--sm">
-                  <img src="../assets/img/card-img-sm.png" alt="" class="card__img">
+                  <img src="../../assets/img/card-img-sm.png" alt="" class="card__img">
 
                   <div class="card__info">
                     <div class="card__text-box">
@@ -110,12 +110,12 @@
                     <a href="#" class="card__link">Категория</a>
 
                     <svg class="card__favorite" width="11" height="18">
-                      <use href="../assets/img/icons.svg#favorite"></use>
+                      <use href="../../assets/img/icons.svg#favorite"></use>
                     </svg>
                   </div>
                 </div>
                 <div class="swiper-slide card card--sm">
-                  <img src="../assets/img/card-img-sm.png" alt="" class="card__img">
+                  <img src="../../assets/img/card-img-sm.png" alt="" class="card__img">
 
                   <div class="card__info">
                     <div class="card__text-box">
@@ -130,12 +130,12 @@
                     <a href="#" class="card__link">Категория</a>
 
                     <svg class="card__favorite" width="11" height="18">
-                      <use href="../assets/img/icons.svg#favorite"></use>
+                      <use href="../../assets/img/icons.svg#favorite"></use>
                     </svg>
                   </div>
                 </div>
                 <div class="swiper-slide card card--sm">
-                  <img src="../assets/img/card-img-sm.png" alt="" class="card__img">
+                  <img src="../../assets/img/card-img-sm.png" alt="" class="card__img">
 
                   <div class="card__info">
                     <div class="card__text-box">
@@ -150,12 +150,12 @@
                     <a href="#" class="card__link">Категория</a>
 
                     <svg class="card__favorite" width="11" height="18">
-                      <use href="../assets/img/icons.svg#favorite"></use>
+                      <use href="../../assets/img/icons.svg#favorite"></use>
                     </svg>
                   </div>
                 </div>
                 <div class="swiper-slide card card--sm">
-                  <img src="../assets/img/card-img-sm.png" alt="" class="card__img">
+                  <img src="../../assets/img/card-img-sm.png" alt="" class="card__img">
 
                   <div class="card__info">
                     <div class="card__text-box">
@@ -170,12 +170,12 @@
                     <a href="#" class="card__link">Категория</a>
 
                     <svg class="card__favorite" width="11" height="18">
-                      <use href="../assets/img/icons.svg#favorite"></use>
+                      <use href="../../assets/img/icons.svg#favorite"></use>
                     </svg>
                   </div>
                 </div>
                 <div class="swiper-slide card card--sm">
-                  <img src="../assets/img/card-img-sm.png" alt="" class="card__img">
+                  <img src="../../assets/img/card-img-sm.png" alt="" class="card__img">
 
                   <div class="card__info">
                     <div class="card__text-box">
@@ -190,7 +190,7 @@
                     <a href="#" class="card__link">Категория</a>
 
                     <svg class="card__favorite" width="11" height="18">
-                      <use href="../assets/img/icons.svg#favorite"></use>
+                      <use href="../../assets/img/icons.svg#favorite"></use>
                     </svg>
                   </div>
                 </div>
@@ -225,7 +225,7 @@
           </div>
         </div>
 
-        <img src="../assets/img/fluid-img1.png" alt="" class="fluid-section__img">
+        <img src="../../assets/img/fluid-img1.png" alt="" class="fluid-section__img">
       </div>
     </section>
 
@@ -248,7 +248,7 @@
             <div class="swiper-container courses-section__swiper-container">
               <div class="swiper-wrapper">
                 <div class="swiper-slide course-card">
-                  <img src="../assets/img/course-img.png" alt="" class="course-card__img">
+                  <img src="../../assets/img/course-img.png" alt="" class="course-card__img">
 
                   <div class="course-card__info">
                     <div class="course-card__title">
@@ -262,29 +262,29 @@
 
                     <div class="course-card__rating rate-stars">
                       <svg class="rate-stars__star" width="11" height="11">
-                        <use href="../assets/img/icons.svg#star"></use>
+                        <use href="../../assets/img/icons.svg#star"></use>
                       </svg>
                       <svg class="rate-stars__star" width="11" height="11">
-                        <use href="../assets/img/icons.svg#star"></use>
+                        <use href="../../assets/img/icons.svg#star"></use>
                       </svg>
                       <svg class="rate-stars__star" width="11" height="11">
-                        <use href="../assets/img/icons.svg#star"></use>
+                        <use href="../../assets/img/icons.svg#star"></use>
                       </svg>
                       <svg class="rate-stars__star" width="11" height="11">
-                        <use href="../assets/img/icons.svg#star"></use>
+                        <use href="../../assets/img/icons.svg#star"></use>
                       </svg>
                       <svg class="rate-stars__star" width="11" height="11">
-                        <use href="../assets/img/icons.svg#star"></use>
+                        <use href="../../assets/img/icons.svg#star"></use>
                       </svg>
                     </div>
 
                     <svg class="course-card__favorite" width="13" height="21">
-                      <use href="../assets/img/icons.svg#favorite"></use>
+                      <use href="../../assets/img/icons.svg#favorite"></use>
                     </svg>
                   </div>
                 </div>
                 <div class="swiper-slide course-card">
-                  <img src="../assets/img/course-img.png" alt="" class="course-card__img">
+                  <img src="../../assets/img/course-img.png" alt="" class="course-card__img">
 
                   <div class="course-card__info">
                     <div class="course-card__title">
@@ -298,29 +298,29 @@
 
                     <div class="course-card__rating rate-stars">
                       <svg class="rate-stars__star" width="11" height="11">
-                        <use href="../assets/img/icons.svg#star"></use>
+                        <use href="../../assets/img/icons.svg#star"></use>
                       </svg>
                       <svg class="rate-stars__star" width="11" height="11">
-                        <use href="../assets/img/icons.svg#star"></use>
+                        <use href="../../assets/img/icons.svg#star"></use>
                       </svg>
                       <svg class="rate-stars__star" width="11" height="11">
-                        <use href="../assets/img/icons.svg#star"></use>
+                        <use href="../../assets/img/icons.svg#star"></use>
                       </svg>
                       <svg class="rate-stars__star" width="11" height="11">
-                        <use href="../assets/img/icons.svg#star"></use>
+                        <use href="../../assets/img/icons.svg#star"></use>
                       </svg>
                       <svg class="rate-stars__star" width="11" height="11">
-                        <use href="../assets/img/icons.svg#star"></use>
+                        <use href="../../assets/img/icons.svg#star"></use>
                       </svg>
                     </div>
 
                     <svg class="course-card__favorite" width="13" height="21">
-                      <use href="../assets/img/icons.svg#favorite"></use>
+                      <use href="../../assets/img/icons.svg#favorite"></use>
                     </svg>
                   </div>
                 </div>
                 <div class="swiper-slide course-card">
-                  <img src="../assets/img/course-img.png" alt="" class="course-card__img">
+                  <img src="../../assets/img/course-img.png" alt="" class="course-card__img">
 
                   <div class="course-card__info">
                     <div class="course-card__title">
@@ -334,29 +334,29 @@
 
                     <div class="course-card__rating rate-stars">
                       <svg class="rate-stars__star" width="11" height="11">
-                        <use href="../assets/img/icons.svg#star"></use>
+                        <use href="../../assets/img/icons.svg#star"></use>
                       </svg>
                       <svg class="rate-stars__star" width="11" height="11">
-                        <use href="../assets/img/icons.svg#star"></use>
+                        <use href="../../assets/img/icons.svg#star"></use>
                       </svg>
                       <svg class="rate-stars__star" width="11" height="11">
-                        <use href="../assets/img/icons.svg#star"></use>
+                        <use href="../../assets/img/icons.svg#star"></use>
                       </svg>
                       <svg class="rate-stars__star" width="11" height="11">
-                        <use href="../assets/img/icons.svg#star"></use>
+                        <use href="../../assets/img/icons.svg#star"></use>
                       </svg>
                       <svg class="rate-stars__star" width="11" height="11">
-                        <use href="../assets/img/icons.svg#star"></use>
+                        <use href="../../assets/img/icons.svg#star"></use>
                       </svg>
                     </div>
 
                     <svg class="course-card__favorite" width="13" height="21">
-                      <use href="../assets/img/icons.svg#favorite"></use>
+                      <use href="../../assets/img/icons.svg#favorite"></use>
                     </svg>
                   </div>
                 </div>
                 <div class="swiper-slide course-card">
-                  <img src="../assets/img/course-img.png" alt="" class="course-card__img">
+                  <img src="../../assets/img/course-img.png" alt="" class="course-card__img">
 
                   <div class="course-card__info">
                     <div class="course-card__title">
@@ -370,29 +370,29 @@
 
                     <div class="course-card__rating rate-stars">
                       <svg class="rate-stars__star" width="11" height="11">
-                        <use href="../assets/img/icons.svg#star"></use>
+                        <use href="../../assets/img/icons.svg#star"></use>
                       </svg>
                       <svg class="rate-stars__star" width="11" height="11">
-                        <use href="../assets/img/icons.svg#star"></use>
+                        <use href="../../assets/img/icons.svg#star"></use>
                       </svg>
                       <svg class="rate-stars__star" width="11" height="11">
-                        <use href="../assets/img/icons.svg#star"></use>
+                        <use href="../../assets/img/icons.svg#star"></use>
                       </svg>
                       <svg class="rate-stars__star" width="11" height="11">
-                        <use href="../assets/img/icons.svg#star"></use>
+                        <use href="../../assets/img/icons.svg#star"></use>
                       </svg>
                       <svg class="rate-stars__star" width="11" height="11">
-                        <use href="../assets/img/icons.svg#star"></use>
+                        <use href="../../assets/img/icons.svg#star"></use>
                       </svg>
                     </div>
 
                     <svg class="course-card__favorite" width="13" height="21">
-                      <use href="../assets/img/icons.svg#favorite"></use>
+                      <use href="../../assets/img/icons.svg#favorite"></use>
                     </svg>
                   </div>
                 </div>
                 <div class="swiper-slide course-card">
-                  <img src="../assets/img/course-img.png" alt="" class="course-card__img">
+                  <img src="../../assets/img/course-img.png" alt="" class="course-card__img">
 
                   <div class="course-card__info">
                     <div class="course-card__title">
@@ -406,29 +406,29 @@
 
                     <div class="course-card__rating rate-stars">
                       <svg class="rate-stars__star" width="11" height="11">
-                        <use href="../assets/img/icons.svg#star"></use>
+                        <use href="../../assets/img/icons.svg#star"></use>
                       </svg>
                       <svg class="rate-stars__star" width="11" height="11">
-                        <use href="../assets/img/icons.svg#star"></use>
+                        <use href="../../assets/img/icons.svg#star"></use>
                       </svg>
                       <svg class="rate-stars__star" width="11" height="11">
-                        <use href="../assets/img/icons.svg#star"></use>
+                        <use href="../../assets/img/icons.svg#star"></use>
                       </svg>
                       <svg class="rate-stars__star" width="11" height="11">
-                        <use href="../assets/img/icons.svg#star"></use>
+                        <use href="../../assets/img/icons.svg#star"></use>
                       </svg>
                       <svg class="rate-stars__star" width="11" height="11">
-                        <use href="../assets/img/icons.svg#star"></use>
+                        <use href="../../assets/img/icons.svg#star"></use>
                       </svg>
                     </div>
 
                     <svg class="course-card__favorite" width="13" height="21">
-                      <use href="../assets/img/icons.svg#favorite"></use>
+                      <use href="../../assets/img/icons.svg#favorite"></use>
                     </svg>
                   </div>
                 </div>
                 <div class="swiper-slide course-card">
-                  <img src="../assets/img/course-img.png" alt="" class="course-card__img">
+                  <img src="../../assets/img/course-img.png" alt="" class="course-card__img">
 
                   <div class="course-card__info">
                     <div class="course-card__title">
@@ -442,29 +442,29 @@
 
                     <div class="course-card__rating rate-stars">
                       <svg class="rate-stars__star" width="11" height="11">
-                        <use href="../assets/img/icons.svg#star"></use>
+                        <use href="../../assets/img/icons.svg#star"></use>
                       </svg>
                       <svg class="rate-stars__star" width="11" height="11">
-                        <use href="../assets/img/icons.svg#star"></use>
+                        <use href="../../assets/img/icons.svg#star"></use>
                       </svg>
                       <svg class="rate-stars__star" width="11" height="11">
-                        <use href="../assets/img/icons.svg#star"></use>
+                        <use href="../../assets/img/icons.svg#star"></use>
                       </svg>
                       <svg class="rate-stars__star" width="11" height="11">
-                        <use href="../assets/img/icons.svg#star"></use>
+                        <use href="../../assets/img/icons.svg#star"></use>
                       </svg>
                       <svg class="rate-stars__star" width="11" height="11">
-                        <use href="../assets/img/icons.svg#star"></use>
+                        <use href="../../assets/img/icons.svg#star"></use>
                       </svg>
                     </div>
 
                     <svg class="course-card__favorite" width="13" height="21">
-                      <use href="../assets/img/icons.svg#favorite"></use>
+                      <use href="../../assets/img/icons.svg#favorite"></use>
                     </svg>
                   </div>
                 </div>
                 <div class="swiper-slide course-card">
-                  <img src="../assets/img/course-img.png" alt="" class="course-card__img">
+                  <img src="../../assets/img/course-img.png" alt="" class="course-card__img">
 
                   <div class="course-card__info">
                     <div class="course-card__title">
@@ -478,29 +478,29 @@
 
                     <div class="course-card__rating rate-stars">
                       <svg class="rate-stars__star" width="11" height="11">
-                        <use href="../assets/img/icons.svg#star"></use>
+                        <use href="../../assets/img/icons.svg#star"></use>
                       </svg>
                       <svg class="rate-stars__star" width="11" height="11">
-                        <use href="../assets/img/icons.svg#star"></use>
+                        <use href="../../assets/img/icons.svg#star"></use>
                       </svg>
                       <svg class="rate-stars__star" width="11" height="11">
-                        <use href="../assets/img/icons.svg#star"></use>
+                        <use href="../../assets/img/icons.svg#star"></use>
                       </svg>
                       <svg class="rate-stars__star" width="11" height="11">
-                        <use href="../assets/img/icons.svg#star"></use>
+                        <use href="../../assets/img/icons.svg#star"></use>
                       </svg>
                       <svg class="rate-stars__star" width="11" height="11">
-                        <use href="../assets/img/icons.svg#star"></use>
+                        <use href="../../assets/img/icons.svg#star"></use>
                       </svg>
                     </div>
 
                     <svg class="course-card__favorite" width="13" height="21">
-                      <use href="../assets/img/icons.svg#favorite"></use>
+                      <use href="../../assets/img/icons.svg#favorite"></use>
                     </svg>
                   </div>
                 </div>
                 <div class="swiper-slide course-card">
-                  <img src="../assets/img/course-img.png" alt="" class="course-card__img">
+                  <img src="../../assets/img/course-img.png" alt="" class="course-card__img">
 
                   <div class="course-card__info">
                     <div class="course-card__title">
@@ -514,24 +514,24 @@
 
                     <div class="course-card__rating rate-stars">
                       <svg class="rate-stars__star" width="11" height="11">
-                        <use href="../assets/img/icons.svg#star"></use>
+                        <use href="../../assets/img/icons.svg#star"></use>
                       </svg>
                       <svg class="rate-stars__star" width="11" height="11">
-                        <use href="../assets/img/icons.svg#star"></use>
+                        <use href="../../assets/img/icons.svg#star"></use>
                       </svg>
                       <svg class="rate-stars__star" width="11" height="11">
-                        <use href="../assets/img/icons.svg#star"></use>
+                        <use href="../../assets/img/icons.svg#star"></use>
                       </svg>
                       <svg class="rate-stars__star" width="11" height="11">
-                        <use href="../assets/img/icons.svg#star"></use>
+                        <use href="../../assets/img/icons.svg#star"></use>
                       </svg>
                       <svg class="rate-stars__star" width="11" height="11">
-                        <use href="../assets/img/icons.svg#star"></use>
+                        <use href="../../assets/img/icons.svg#star"></use>
                       </svg>
                     </div>
 
                     <svg class="course-card__favorite" width="13" height="21">
-                      <use href="../assets/img/icons.svg#favorite"></use>
+                      <use href="../../assets/img/icons.svg#favorite"></use>
                     </svg>
                   </div>
                 </div>
@@ -560,7 +560,7 @@
             <div class="swiper-container courses-section__swiper-container">
               <div class="swiper-wrapper">
                 <div class="swiper-slide course-card">
-                  <img src="../assets/img/course-img.png" alt="" class="course-card__img">
+                  <img src="../../assets/img/course-img.png" alt="" class="course-card__img">
 
                   <div class="course-card__info">
                     <div class="course-card__title">
@@ -574,29 +574,29 @@
 
                     <div class="course-card__rating rate-stars">
                       <svg class="rate-stars__star" width="11" height="11">
-                        <use href="../assets/img/icons.svg#star"></use>
+                        <use href="../../assets/img/icons.svg#star"></use>
                       </svg>
                       <svg class="rate-stars__star" width="11" height="11">
-                        <use href="../assets/img/icons.svg#star"></use>
+                        <use href="../../assets/img/icons.svg#star"></use>
                       </svg>
                       <svg class="rate-stars__star" width="11" height="11">
-                        <use href="../assets/img/icons.svg#star"></use>
+                        <use href="../../assets/img/icons.svg#star"></use>
                       </svg>
                       <svg class="rate-stars__star" width="11" height="11">
-                        <use href="../assets/img/icons.svg#star"></use>
+                        <use href="../../assets/img/icons.svg#star"></use>
                       </svg>
                       <svg class="rate-stars__star" width="11" height="11">
-                        <use href="../assets/img/icons.svg#star"></use>
+                        <use href="../../assets/img/icons.svg#star"></use>
                       </svg>
                     </div>
 
                     <svg class="course-card__favorite" width="13" height="21">
-                      <use href="../assets/img/icons.svg#favorite"></use>
+                      <use href="../../assets/img/icons.svg#favorite"></use>
                     </svg>
                   </div>
                 </div>
                 <div class="swiper-slide course-card">
-                  <img src="../assets/img/course-img.png" alt="" class="course-card__img">
+                  <img src="../../assets/img/course-img.png" alt="" class="course-card__img">
 
                   <div class="course-card__info">
                     <div class="course-card__title">
@@ -610,29 +610,29 @@
 
                     <div class="course-card__rating rate-stars">
                       <svg class="rate-stars__star" width="11" height="11">
-                        <use href="../assets/img/icons.svg#star"></use>
+                        <use href="../../assets/img/icons.svg#star"></use>
                       </svg>
                       <svg class="rate-stars__star" width="11" height="11">
-                        <use href="../assets/img/icons.svg#star"></use>
+                        <use href="../../assets/img/icons.svg#star"></use>
                       </svg>
                       <svg class="rate-stars__star" width="11" height="11">
-                        <use href="../assets/img/icons.svg#star"></use>
+                        <use href="../../assets/img/icons.svg#star"></use>
                       </svg>
                       <svg class="rate-stars__star" width="11" height="11">
-                        <use href="../assets/img/icons.svg#star"></use>
+                        <use href="../../assets/img/icons.svg#star"></use>
                       </svg>
                       <svg class="rate-stars__star" width="11" height="11">
-                        <use href="../assets/img/icons.svg#star"></use>
+                        <use href="../../assets/img/icons.svg#star"></use>
                       </svg>
                     </div>
 
                     <svg class="course-card__favorite" width="13" height="21">
-                      <use href="../assets/img/icons.svg#favorite"></use>
+                      <use href="../../assets/img/icons.svg#favorite"></use>
                     </svg>
                   </div>
                 </div>
                 <div class="swiper-slide course-card">
-                  <img src="../assets/img/course-img.png" alt="" class="course-card__img">
+                  <img src="../../assets/img/course-img.png" alt="" class="course-card__img">
 
                   <div class="course-card__info">
                     <div class="course-card__title">
@@ -646,29 +646,29 @@
 
                     <div class="course-card__rating rate-stars">
                       <svg class="rate-stars__star" width="11" height="11">
-                        <use href="../assets/img/icons.svg#star"></use>
+                        <use href="../../assets/img/icons.svg#star"></use>
                       </svg>
                       <svg class="rate-stars__star" width="11" height="11">
-                        <use href="../assets/img/icons.svg#star"></use>
+                        <use href="../../assets/img/icons.svg#star"></use>
                       </svg>
                       <svg class="rate-stars__star" width="11" height="11">
-                        <use href="../assets/img/icons.svg#star"></use>
+                        <use href="../../assets/img/icons.svg#star"></use>
                       </svg>
                       <svg class="rate-stars__star" width="11" height="11">
-                        <use href="../assets/img/icons.svg#star"></use>
+                        <use href="../../assets/img/icons.svg#star"></use>
                       </svg>
                       <svg class="rate-stars__star" width="11" height="11">
-                        <use href="../assets/img/icons.svg#star"></use>
+                        <use href="../../assets/img/icons.svg#star"></use>
                       </svg>
                     </div>
 
                     <svg class="course-card__favorite" width="13" height="21">
-                      <use href="../assets/img/icons.svg#favorite"></use>
+                      <use href="../../assets/img/icons.svg#favorite"></use>
                     </svg>
                   </div>
                 </div>
                 <div class="swiper-slide course-card">
-                  <img src="../assets/img/course-img.png" alt="" class="course-card__img">
+                  <img src="../../assets/img/course-img.png" alt="" class="course-card__img">
 
                   <div class="course-card__info">
                     <div class="course-card__title">
@@ -682,29 +682,29 @@
 
                     <div class="course-card__rating rate-stars">
                       <svg class="rate-stars__star" width="11" height="11">
-                        <use href="../assets/img/icons.svg#star"></use>
+                        <use href="../../assets/img/icons.svg#star"></use>
                       </svg>
                       <svg class="rate-stars__star" width="11" height="11">
-                        <use href="../assets/img/icons.svg#star"></use>
+                        <use href="../../assets/img/icons.svg#star"></use>
                       </svg>
                       <svg class="rate-stars__star" width="11" height="11">
-                        <use href="../assets/img/icons.svg#star"></use>
+                        <use href="../../assets/img/icons.svg#star"></use>
                       </svg>
                       <svg class="rate-stars__star" width="11" height="11">
-                        <use href="../assets/img/icons.svg#star"></use>
+                        <use href="../../assets/img/icons.svg#star"></use>
                       </svg>
                       <svg class="rate-stars__star" width="11" height="11">
-                        <use href="../assets/img/icons.svg#star"></use>
+                        <use href="../../assets/img/icons.svg#star"></use>
                       </svg>
                     </div>
 
                     <svg class="course-card__favorite" width="13" height="21">
-                      <use href="../assets/img/icons.svg#favorite"></use>
+                      <use href="../../assets/img/icons.svg#favorite"></use>
                     </svg>
                   </div>
                 </div>
                 <div class="swiper-slide course-card">
-                  <img src="../assets/img/course-img.png" alt="" class="course-card__img">
+                  <img src="../../assets/img/course-img.png" alt="" class="course-card__img">
 
                   <div class="course-card__info">
                     <div class="course-card__title">
@@ -718,29 +718,29 @@
 
                     <div class="course-card__rating rate-stars">
                       <svg class="rate-stars__star" width="11" height="11">
-                        <use href="../assets/img/icons.svg#star"></use>
+                        <use href="../../assets/img/icons.svg#star"></use>
                       </svg>
                       <svg class="rate-stars__star" width="11" height="11">
-                        <use href="../assets/img/icons.svg#star"></use>
+                        <use href="../../assets/img/icons.svg#star"></use>
                       </svg>
                       <svg class="rate-stars__star" width="11" height="11">
-                        <use href="../assets/img/icons.svg#star"></use>
+                        <use href="../../assets/img/icons.svg#star"></use>
                       </svg>
                       <svg class="rate-stars__star" width="11" height="11">
-                        <use href="../assets/img/icons.svg#star"></use>
+                        <use href="../../assets/img/icons.svg#star"></use>
                       </svg>
                       <svg class="rate-stars__star" width="11" height="11">
-                        <use href="../assets/img/icons.svg#star"></use>
+                        <use href="../../assets/img/icons.svg#star"></use>
                       </svg>
                     </div>
 
                     <svg class="course-card__favorite" width="13" height="21">
-                      <use href="../assets/img/icons.svg#favorite"></use>
+                      <use href="../../assets/img/icons.svg#favorite"></use>
                     </svg>
                   </div>
                 </div>
                 <div class="swiper-slide course-card">
-                  <img src="../assets/img/course-img.png" alt="" class="course-card__img">
+                  <img src="../../assets/img/course-img.png" alt="" class="course-card__img">
 
                   <div class="course-card__info">
                     <div class="course-card__title">
@@ -754,29 +754,29 @@
 
                     <div class="course-card__rating rate-stars">
                       <svg class="rate-stars__star" width="11" height="11">
-                        <use href="../assets/img/icons.svg#star"></use>
+                        <use href="../../assets/img/icons.svg#star"></use>
                       </svg>
                       <svg class="rate-stars__star" width="11" height="11">
-                        <use href="../assets/img/icons.svg#star"></use>
+                        <use href="../../assets/img/icons.svg#star"></use>
                       </svg>
                       <svg class="rate-stars__star" width="11" height="11">
-                        <use href="../assets/img/icons.svg#star"></use>
+                        <use href="../../assets/img/icons.svg#star"></use>
                       </svg>
                       <svg class="rate-stars__star" width="11" height="11">
-                        <use href="../assets/img/icons.svg#star"></use>
+                        <use href="../../assets/img/icons.svg#star"></use>
                       </svg>
                       <svg class="rate-stars__star" width="11" height="11">
-                        <use href="../assets/img/icons.svg#star"></use>
+                        <use href="../../assets/img/icons.svg#star"></use>
                       </svg>
                     </div>
 
                     <svg class="course-card__favorite" width="13" height="21">
-                      <use href="../assets/img/icons.svg#favorite"></use>
+                      <use href="../../assets/img/icons.svg#favorite"></use>
                     </svg>
                   </div>
                 </div>
                 <div class="swiper-slide course-card">
-                  <img src="../assets/img/course-img.png" alt="" class="course-card__img">
+                  <img src="../../assets/img/course-img.png" alt="" class="course-card__img">
 
                   <div class="course-card__info">
                     <div class="course-card__title">
@@ -790,29 +790,29 @@
 
                     <div class="course-card__rating rate-stars">
                       <svg class="rate-stars__star" width="11" height="11">
-                        <use href="../assets/img/icons.svg#star"></use>
+                        <use href="../../assets/img/icons.svg#star"></use>
                       </svg>
                       <svg class="rate-stars__star" width="11" height="11">
-                        <use href="../assets/img/icons.svg#star"></use>
+                        <use href="../../assets/img/icons.svg#star"></use>
                       </svg>
                       <svg class="rate-stars__star" width="11" height="11">
-                        <use href="../assets/img/icons.svg#star"></use>
+                        <use href="../../assets/img/icons.svg#star"></use>
                       </svg>
                       <svg class="rate-stars__star" width="11" height="11">
-                        <use href="../assets/img/icons.svg#star"></use>
+                        <use href="../../assets/img/icons.svg#star"></use>
                       </svg>
                       <svg class="rate-stars__star" width="11" height="11">
-                        <use href="../assets/img/icons.svg#star"></use>
+                        <use href="../../assets/img/icons.svg#star"></use>
                       </svg>
                     </div>
 
                     <svg class="course-card__favorite" width="13" height="21">
-                      <use href="../assets/img/icons.svg#favorite"></use>
+                      <use href="../../assets/img/icons.svg#favorite"></use>
                     </svg>
                   </div>
                 </div>
                 <div class="swiper-slide course-card">
-                  <img src="../assets/img/course-img.png" alt="" class="course-card__img">
+                  <img src="../../assets/img/course-img.png" alt="" class="course-card__img">
 
                   <div class="course-card__info">
                     <div class="course-card__title">
@@ -826,24 +826,24 @@
 
                     <div class="course-card__rating rate-stars">
                       <svg class="rate-stars__star" width="11" height="11">
-                        <use href="../assets/img/icons.svg#star"></use>
+                        <use href="../../assets/img/icons.svg#star"></use>
                       </svg>
                       <svg class="rate-stars__star" width="11" height="11">
-                        <use href="../assets/img/icons.svg#star"></use>
+                        <use href="../../assets/img/icons.svg#star"></use>
                       </svg>
                       <svg class="rate-stars__star" width="11" height="11">
-                        <use href="../assets/img/icons.svg#star"></use>
+                        <use href="../../assets/img/icons.svg#star"></use>
                       </svg>
                       <svg class="rate-stars__star" width="11" height="11">
-                        <use href="../assets/img/icons.svg#star"></use>
+                        <use href="../../assets/img/icons.svg#star"></use>
                       </svg>
                       <svg class="rate-stars__star" width="11" height="11">
-                        <use href="../assets/img/icons.svg#star"></use>
+                        <use href="../../assets/img/icons.svg#star"></use>
                       </svg>
                     </div>
 
                     <svg class="course-card__favorite" width="13" height="21">
-                      <use href="../assets/img/icons.svg#favorite"></use>
+                      <use href="../../assets/img/icons.svg#favorite"></use>
                     </svg>
                   </div>
                 </div>
@@ -878,7 +878,7 @@
           </div>
         </div>
 
-        <img src="../assets/img/fluid-img2.png" alt="" class="fluid-section__img">
+        <img src="../../assets/img/fluid-img2.png" alt="" class="fluid-section__img">
       </div>
     </section>
 
@@ -890,7 +890,7 @@
           </div>
           <div class="cards-section__card card">
 
-            <img src="../assets/img/card-img.png" alt="" class="card__img">
+            <img src="../../assets/img/card-img.png" alt="" class="card__img">
 
             <div class="card__info">
               <div class="card__row">
@@ -911,7 +911,7 @@
               </p>
 
               <svg class="card__favorite" width="17" height="28">
-                <use href="../assets/img/icons.svg#favorite"></use>
+                <use href="../../assets/img/icons.svg#favorite"></use>
               </svg>
             </div>
 
@@ -931,7 +931,7 @@
             <div class="swiper-container cards-section__swiper-container">
               <div class="swiper-wrapper">
                 <div class="swiper-slide card card--sm">
-                  <img src="../assets/img/card-img-sm.png" alt="" class="card__img">
+                  <img src="../../assets/img/card-img-sm.png" alt="" class="card__img">
 
                   <div class="card__info">
                     <div class="card__text-box">
@@ -946,12 +946,12 @@
                     <a href="#" class="card__link">Категория</a>
 
                     <svg class="card__favorite" width="11" height="18">
-                      <use href="../assets/img/icons.svg#favorite"></use>
+                      <use href="../../assets/img/icons.svg#favorite"></use>
                     </svg>
                   </div>
                 </div>
                 <div class="swiper-slide card card--sm">
-                  <img src="../assets/img/card-img-sm.png" alt="" class="card__img">
+                  <img src="../../assets/img/card-img-sm.png" alt="" class="card__img">
 
                   <div class="card__info">
                     <div class="card__text-box">
@@ -966,12 +966,12 @@
                     <a href="#" class="card__link">Категория</a>
 
                     <svg class="card__favorite" width="11" height="18">
-                      <use href="../assets/img/icons.svg#favorite"></use>
+                      <use href="../../assets/img/icons.svg#favorite"></use>
                     </svg>
                   </div>
                 </div>
                 <div class="swiper-slide card card--sm">
-                  <img src="../assets/img/card-img-sm.png" alt="" class="card__img">
+                  <img src="../../assets/img/card-img-sm.png" alt="" class="card__img">
 
                   <div class="card__info">
                     <div class="card__text-box">
@@ -986,12 +986,12 @@
                     <a href="#" class="card__link">Категория</a>
 
                     <svg class="card__favorite" width="11" height="18">
-                      <use href="../assets/img/icons.svg#favorite"></use>
+                      <use href="../../assets/img/icons.svg#favorite"></use>
                     </svg>
                   </div>
                 </div>
                 <div class="swiper-slide card card--sm">
-                  <img src="../assets/img/card-img-sm.png" alt="" class="card__img">
+                  <img src="../../assets/img/card-img-sm.png" alt="" class="card__img">
 
                   <div class="card__info">
                     <div class="card__text-box">
@@ -1006,12 +1006,12 @@
                     <a href="#" class="card__link">Категория</a>
 
                     <svg class="card__favorite" width="11" height="18">
-                      <use href="../assets/img/icons.svg#favorite"></use>
+                      <use href="../../assets/img/icons.svg#favorite"></use>
                     </svg>
                   </div>
                 </div>
                 <div class="swiper-slide card card--sm">
-                  <img src="../assets/img/card-img-sm.png" alt="" class="card__img">
+                  <img src="../../assets/img/card-img-sm.png" alt="" class="card__img">
 
                   <div class="card__info">
                     <div class="card__text-box">
@@ -1026,12 +1026,12 @@
                     <a href="#" class="card__link">Категория</a>
 
                     <svg class="card__favorite" width="11" height="18">
-                      <use href="../assets/img/icons.svg#favorite"></use>
+                      <use href="../../assets/img/icons.svg#favorite"></use>
                     </svg>
                   </div>
                 </div>
                 <div class="swiper-slide card card--sm">
-                  <img src="../assets/img/card-img-sm.png" alt="" class="card__img">
+                  <img src="../../assets/img/card-img-sm.png" alt="" class="card__img">
 
                   <div class="card__info">
                     <div class="card__text-box">
@@ -1046,7 +1046,7 @@
                     <a href="#" class="card__link">Категория</a>
 
                     <svg class="card__favorite" width="11" height="18">
-                      <use href="../assets/img/icons.svg#favorite"></use>
+                      <use href="../../assets/img/icons.svg#favorite"></use>
                     </svg>
                   </div>
                 </div>
@@ -1063,7 +1063,7 @@
       </div>
     </section>
 
-  </main>
+  </div>
 </template>
 
 <script>
