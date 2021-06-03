@@ -94,8 +94,8 @@ export default {
   },
 
   env: {
-    // API_URL: 'https://api.inohub.kz/api/'
-    API_URL: 'http://inohub-api.test/api/'
+    API_URL: 'https://api.inohub.kz/api/'
+    // API_URL: 'http://inohub-api.test/api/'
   },
 
   build: {},
