@@ -541,8 +541,8 @@
               <!-- Add Pagination -->
               <div class="swiper-pagination courses-section__pagination"></div>
               <!-- Add Arrows -->
-<!--              <div class="swiper-button-next courses-section__next"></div>-->
-<!--              <div class="swiper-button-prev courses-section__prev"></div>-->
+              <!--              <div class="swiper-button-next courses-section__next"></div>-->
+              <!--              <div class="swiper-button-prev courses-section__prev"></div>-->
             </div>
           </div>
         </div>
@@ -1073,7 +1073,11 @@ import Swiper, {Pagination, Navigation} from 'swiper';
 
 Swiper.use([Pagination, Navigation]);
 export default {
-
+  data() {
+    return {
+      startups : []
+    }
+  },
   mounted() {
     var swiper1 = new Swiper('.cards-section__swiper-container', {
       slidesPerView: 1,
@@ -1102,6 +1106,19 @@ export default {
       //   prevEl: '.courses-section__prev',
       // },
     });
+
+    this.getStartups()
+  },
+  methods: {
+    getStartups() {
+      this.$iapi.$get('/api/startups')
+      .then(response => {
+          console.log('kekw')
+      })
+      .catch(error => {
+
+      })
+    }
   }
 };
 </script>
@@ -1109,3 +1126,5 @@ export default {
 <style lang="scss">
 
 </style>
+
+

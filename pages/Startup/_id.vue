@@ -3,19 +3,18 @@
     <div class="startup-page__container">
 
       <div class="startup-page__path-history path-history">
-        <div class="path-history__item">Программирование</div>
-        <div class="path-history__item">JavaScript</div>
+        <div class="path-history__item">IoT</div>
+        <div class="path-history__item">Умный шкаф</div>
       </div>
 
       <div class="startup-page__heading-box">
 
         <h3 class="startup-page__heading">
-          Полный курс по JavaScript - с нуля до результата.
+            Шкаф который может поместить все.
         </h3>
 
         <p class="startup-page__subtitle">
-          Полный курс по JavaScript - с нуля до результата. Полный курс по JavaScript - с нуля до результата. Полный
-          курс по JavaScript
+          Благодаря этому шкафчику, все ваши вещи будут сложены аккуратно и будут в порядке и чистоте.
         </p>
 
       </div>
@@ -27,15 +26,15 @@
           <div class="startup-info__images">
 
             <div class="startup-info__img-box">
-              <img src="../../assets/img/startup-main-img.png" alt="" class="startup-info__main-img">
+              <img src="../../assets/img/sample.png" alt="" class="startup-info__main-img">
             </div>
 
             <div class="startup-info__img-row">
-              <img src="../../assets/img/startup-additional-img.png" alt="" class="startup-info__additional-img">
-              <img src="../../assets/img/startup-additional-img.png" alt="" class="startup-info__additional-img">
-              <img src="../../assets/img/startup-additional-img.png" alt="" class="startup-info__additional-img">
-              <img src="../../assets/img/startup-additional-img.png" alt="" class="startup-info__additional-img">
-              <img src="../../assets/img/startup-additional-img.png" alt="" class="startup-info__additional-img">
+              <img src="../../assets/img/sample.png" alt="" class="startup-info__additional-img">
+              <img src="../../assets/img/sample.png" alt="" class="startup-info__additional-img">
+              <img src="../../assets/img/sample.png" alt="" class="startup-info__additional-img">
+              <img src="../../assets/img/sample.png" alt="" class="startup-info__additional-img">
+              <img src="../../assets/img/sample.png" alt="" class="startup-info__additional-img">
             </div>
 
           </div>
@@ -110,13 +109,13 @@
               </div>
 
               <div class="tab-description__text">
-                Полный курс по JavaScript - с нуля до результата. Полный курс по JavaScript - с нуля до результата.
-                Полный курс по JavaScript
+                Благодаря этому шкафчику, все ваши вещи будут сложены аккуратно и будут в порядке и чистоте.
+                Благодаря этому шкафчику, все ваши вещи будут сложены аккуратно и будут в порядке и чистоте.
                 <br><br>
-                Полный курс по JavaScript - с нуля до результата. Полный курс по JavaScript - с нуля до результата.
-                Полный курс по JavaScript Полный курс по JavaScript - с нуля до результата. Полный курс по JavaScript -
-                с нуля до результата. Полный курс по JavaScript Полный курс по JavaScript - с нуля до результата. Полный
-                курс по JavaScript - с нуля до результата. Полный курс по JavaScript
+                Благодаря этому шкафчику, все ваши вещи будут сложены аккуратно и будут в порядке и чистоте.
+                Благодаря этому шкафчику, все ваши вещи будут сложены аккуратно и будут в порядке и чистоте.
+                Благодаря этому шкафчику, все ваши вещи будут сложены аккуратно и будут в порядке и чистоте.
+                Благодаря этому шкафчику, все ваши вещи будут сложены аккуратно и будут в порядке и чистоте.
               </div>
 
               <img src="../../assets/img/tab-desc.png" alt="" class="tab-description__img">
