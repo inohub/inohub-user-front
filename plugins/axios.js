@@ -15,5 +15,5 @@ export default function ({$axios, store}, inject) {
     }
   })
 
-  inject('iapi', api)
+  inject('api', api)
 }

@@ -92,6 +92,12 @@ export default {
     name: 'fade',
     mode: 'out-in'
   },
+
+  env: {
+    // API_URL: 'https://api.inohub.kz/api/'
+    API_URL: 'http://inohub-api.test/api/'
+  },
+
   build: {},
   router: {
     linkActiveClass: 'active_link',

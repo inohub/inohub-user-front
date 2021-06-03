@@ -1,6 +1,13 @@
 <template>
   <div class="startup-page">
-    <div class="startup-page__container">
+
+    <div class="startup-page__loader loader" v-if="isLoading">
+      <img src="../../../assets/img/icons/loader.svg" alt="">
+
+      <p>Загрузка...</p>
+    </div>
+
+    <div class="startup-page__container" v-else>
 
       <div class="startup-page__path-history path-history">
         <div class="path-history__item">Программирование</div>
@@ -10,12 +17,11 @@
       <div class="startup-page__heading-box">
 
         <h3 class="startup-page__heading">
-          Полный курс по JavaScript - с нуля до результата.
+          {{ course.name }}
         </h3>
 
         <p class="startup-page__subtitle">
-          Полный курс по JavaScript - с нуля до результата. Полный курс по JavaScript - с нуля до результата. Полный
-          курс по JavaScript
+          {{ course.subtitle }}
         </p>
 
       </div>
@@ -44,12 +50,12 @@
 
             <div class="startup-info__progress-box progress-box">
               <div class="progress-box__wrapper">
-                <div class="progress-box__line"></div>
+                <div class="progress-box__line" :style="{ width: donationPercent + '%' }"></div>
               </div>
 
               <div class="progress-box__row">
                 <div class="progress-box__percent">
-                  71%
+                  {{ donationPercent }}%
                 </div>
 
                 <div class="progress-box__text">
@@ -61,7 +67,7 @@
             </div>
 
             <div class="startup-info__sum">
-              <span>600 000тг</span> / 3 млн тг
+              <span>{{ randDonation }}тг</span> / {{ course.donation_amount }}тг
             </div>
 
             <div class="startup-info__likes">
@@ -69,11 +75,11 @@
                 <use href="../../../assets/img/icons.svg#heart"></use>
               </svg>
 
-              <p>2001</p>
+              <p>{{ likes }}</p>
             </div>
 
             <div class="startup-info__date">
-              <p>7 апреля 2021г</p>
+              <p>{{ course.status_changed | moment('DD.MM.YYYY') }}</p>
               <p>Алматы</p>
             </div>
 
@@ -109,14 +115,10 @@
                 </div>
               </div>
 
-              <div class="tab-description__text">
-                Полный курс по JavaScript - с нуля до результата. Полный курс по JavaScript - с нуля до результата.
-                Полный курс по JavaScript
+              <div class="tab-description__text" v-for="(text, i) in course.texts">
+                {{ text.title }}
                 <br><br>
-                Полный курс по JavaScript - с нуля до результата. Полный курс по JavaScript - с нуля до результата.
-                Полный курс по JavaScript Полный курс по JavaScript - с нуля до результата. Полный курс по JavaScript -
-                с нуля до результата. Полный курс по JavaScript Полный курс по JavaScript - с нуля до результата. Полный
-                курс по JavaScript - с нуля до результата. Полный курс по JavaScript
+                {{ text.content }}
               </div>
 
               <img src="../../../assets/img/tab-desc.png" alt="" class="tab-description__img">
@@ -131,25 +133,25 @@
 
                 <div class="tab-faq__item"
                      v-for="(q, i) in faq"
-                     :key="q.title"
-                     :class="{'tab-faq__item--active' : q.show}"
+                     :key="q.id"
+                     :class="{'tab-faq__item--active' : q.id === curFaqIndex}"
                 >
 
-                  <div class="tab-faq__row" @click="toggle(i)">
+                  <div class="tab-faq__row" @click="toggle(q.id)">
 
-                    <div class="tab-faq__title" v-html="q.title"></div>
+                    <div class="tab-faq__title" v-html="q.text.title"></div>
 
                     <svg class="tab-faq__icon"
                          width="18px"
                          height="17px"
-                         :class="{ 'tab-faq__icon--active': q.show }"
+                         :class="{ 'tab-faq__icon--active': q.id === curFaqIndex }"
                     >
                       <use href="../../../assets/img/icons.svg#faq-chevron"></use>
                     </svg>
 
                   </div>
 
-                  <div class="tab-faq__text" v-show="q.show" v-html="q.text"></div>
+                  <div class="tab-faq__text" v-show="q.id === curFaqIndex" v-html="q.text.content"></div>
 
                 </div>
 
@@ -159,7 +161,7 @@
 
           </tab>
           <tab title="Новости">
-            <div class="tab__content tab-description">
+            <div class="tab__content tab-description" v-for="(n, i) in news" :key="n.id">
 
               <div class="tab-description__row">
                 <div class="tab-description__title">
@@ -167,18 +169,14 @@
                 </div>
 
                 <div class="tab-description__date">
-                  04.03.2021    16:30
+                  {{ n.published_at | moment('DD.MM.YYYY hh:mm') }}
                 </div>
               </div>
 
-              <div class="tab-description__text">
-                Полный курс по JavaScript - с нуля до результата. Полный курс по JavaScript - с нуля до результата.
-                Полный курс по JavaScript
+              <div class="tab-description__text" v-for="t in n.texts">
+                {{ t.title }}
                 <br><br>
-                Полный курс по JavaScript - с нуля до результата. Полный курс по JavaScript - с нуля до результата.
-                Полный курс по JavaScript Полный курс по JavaScript - с нуля до результата. Полный курс по JavaScript -
-                с нуля до результата. Полный курс по JavaScript Полный курс по JavaScript - с нуля до результата. Полный
-                курс по JavaScript - с нуля до результата. Полный курс по JavaScript
+                {{ t.content }}
               </div>
 
               <img src="../../../assets/img/tab-desc.png" alt="" class="tab-description__img">
@@ -190,57 +188,33 @@
 
               <div class="tab-comments__main">
 
-                <div class="tab-comments__item comment-box">
+                <div class="tab-comments__item comment-box" v-for="(com, i) in comments">
                   <div class="comment-box__row user-box">
                     <img src="../../../assets/img/avatar.png" alt="" class="user-box__avatar">
                     <div class="user-box__info">
-                      <div class="user-box__name">Имя Фамилия</div>
-                      <div class="user-box__time">2 часа назад</div>
+                      <div class="user-box__name">Имя фамилия</div>
+                      <div class="user-box__time">{{ com.created_at | moment('DD.MM.YYYY') }}</div>
                     </div>
                   </div>
 
-                  <div class="comment-box__text">Законно ли это?</div>
+                  <div class="comment-box__text">{{ com.text }}</div>
                 </div>
 
-                <div class="tab-comments__item comment-box comment-box--author comment-box--reply">
-                  <div class="comment-box__row user-box">
-                    <img src="../../../assets/img/avatar.png" alt="" class="user-box__avatar">
-                    <div class="user-box__info">
-                      <div class="user-box__name">Имя Фамилия</div>
-                      <div class="user-box__time">2 часа назад</div>
-                    </div>
+                <!--                <div class="tab-comments__item comment-box comment-box&#45;&#45;author comment-box&#45;&#45;reply">-->
+                <!--                  <div class="comment-box__row user-box">-->
+                <!--                    <img src="../../../assets/img/avatar.png" alt="" class="user-box__avatar">-->
+                <!--                    <div class="user-box__info">-->
+                <!--                      <div class="user-box__name">Имя Фамилия</div>-->
+                <!--                      <div class="user-box__time">2 часа назад</div>-->
+                <!--                    </div>-->
 
-                    <div class="comment-box__label">
-                      Автор
-                    </div>
-                  </div>
+                <!--                    <div class="comment-box__label">-->
+                <!--                      Автор-->
+                <!--                    </div>-->
+                <!--                  </div>-->
 
-                  <div class="comment-box__text"><span>Имя</span>, Законно ли это?</div>
-                </div>
-
-                <div class="tab-comments__item comment-box">
-                  <div class="comment-box__row user-box">
-                    <img src="../../../assets/img/avatar.png" alt="" class="user-box__avatar">
-                    <div class="user-box__info">
-                      <div class="user-box__name">Имя Фамилия</div>
-                      <div class="user-box__time">2 часа назад</div>
-                    </div>
-                  </div>
-
-                  <div class="comment-box__text">Законно ли это?</div>
-                </div>
-
-                <div class="tab-comments__item comment-box comment-box--reply">
-                  <div class="comment-box__row user-box">
-                    <img src="../../../assets/img/avatar.png" alt="" class="user-box__avatar">
-                    <div class="user-box__info">
-                      <div class="user-box__name">Имя Фамилия</div>
-                      <div class="user-box__time">2 часа назад</div>
-                    </div>
-                  </div>
-
-                  <div class="comment-box__text"><span>Имя</span>, Законно ли это?</div>
-                </div>
+                <!--                  <div class="comment-box__text"><span>Имя</span>, Законно ли это?</div>-->
+                <!--                </div>-->
 
               </div>
 
@@ -275,34 +249,60 @@ export default {
   },
   data() {
     return {
-      faq: [
-        {
-          show: false,
-          title: "Законно ли это?",
-          text: "Да, конечно законно. Ты что дурачок???",
-        },
-        {
-          show: false,
-          title: "Законно ли это?",
-          text: "Да, конечно законно. Ты что дурачок???",
-        },
-        {
-          show: false,
-          title: "Законно ли это?",
-          text: "Да, конечно законно. Ты что дурачок???",
-        },
-      ],
+      curFaqIndex: null,
+      faq: [],
+      course: {},
+      randDonation: 0,
+      donationPercent: 0,
+      likes: {},
+      comments: {},
+      news: [],
+      isLoading: true
     }
   },
   methods: {
-    toggle(index) {
-      this.faq[index].show = !this.faq[index].show;
-      for (let i = 0; i < this.faq.length; i++) {
-        if (this.faq[i] !== this.faq[index]) {
-          this.faq[i].show = false;
-        }
+    toggle(id) {
+      if (this.curFaqIndex === id) {
+        this.curFaqIndex = null
+      } else {
+        this.curFaqIndex = id
       }
     },
+  },
+  mounted() {
+    this.$axios.get(process.env.API_URL + 'startups/' + this.$route.params.id)
+      .then(response => {
+        this.course = response.data.data
+        this.randDonation = Math.floor(Math.random() * (response.data.data.donation_amount - 1000) + 1000)
+        this.donationPercent = Math.floor(((this.randDonation * 100) / response.data.data.donation_amount))
+
+        this.$axios.get(process.env.API_URL + 'startups/' + this.$route.params.id + '/likes')
+          .then(response => {
+            this.likes = response.data.data.total
+
+            this.$axios.get(process.env.API_URL + 'startups/' + this.$route.params.id + '/comments')
+              .then(response => {
+                this.comments = response.data.data.data
+                console.log(response.data.data.data)
+
+                this.$axios.get(process.env.API_URL + 'faqs?search[startup_id]=exact|1')
+                  .then(response => {
+                    this.faq = response.data.data.data
+
+                    this.$axios.get(process.env.API_URL + 'startups/' + this.$route.params.id + '/startup-news')
+                      .then(response => {
+                        this.news = response.data.data.data
+                        this.isLoading = false
+                      })
+                      .catch(e => console.log(e))
+                  })
+                  .catch(e => console.log(e))
+              })
+              .catch(e => console.log(e))
+          })
+          .catch(e => console.log(e))
+      })
+      .catch(e => console.log(e))
   }
 }
 </script>

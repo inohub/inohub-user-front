@@ -77,7 +77,8 @@ export default {
     register() {
       this.$axios.post("https://api.inohub.kz/api/auth/registration", {
         email: this.email,
-        password: this.password
+        password: this.password,
+        role_slug: 'guest'
       })
         .then(response => {
           this.data = response;

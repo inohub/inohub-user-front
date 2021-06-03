@@ -98,6 +98,16 @@
     line-height: 23px;
   }
 
+  &__input {
+    width: 570px;
+    height: 45px;
+    border-radius: 7px;
+    background-color: $white-color;
+    @include text-style(1.8rem, 600, $text-color);
+    padding: 0 20px;
+    margin-left: 45px;
+  }
+
   &__question-row {
     display: flex;
     align-items: center;
