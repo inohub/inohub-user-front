@@ -2,6 +2,10 @@
 
   $e: &;
 
+  &--fixed-width {
+    width: 665px;
+  }
+
   &__header {
     display: inline-flex;
     align-items: center;

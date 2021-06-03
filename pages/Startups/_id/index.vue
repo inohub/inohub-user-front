@@ -3,18 +3,19 @@
     <div class="startup-page__container">
 
       <div class="startup-page__path-history path-history">
-        <div class="path-history__item">IoT</div>
-        <div class="path-history__item">Умный шкаф</div>
+        <div class="path-history__item">Программирование</div>
+        <div class="path-history__item">JavaScript</div>
       </div>
 
       <div class="startup-page__heading-box">
 
         <h3 class="startup-page__heading">
-            Шкаф который может поместить все.
+          Полный курс по JavaScript - с нуля до результата.
         </h3>
 
         <p class="startup-page__subtitle">
-          Благодаря этому шкафчику, все ваши вещи будут сложены аккуратно и будут в порядке и чистоте.
+          Полный курс по JavaScript - с нуля до результата. Полный курс по JavaScript - с нуля до результата. Полный
+          курс по JavaScript
         </p>
 
       </div>
@@ -26,15 +27,15 @@
           <div class="startup-info__images">
 
             <div class="startup-info__img-box">
-              <img src="../../assets/img/sample.png" alt="" class="startup-info__main-img">
+              <img src="../../../assets/img/startup-main-img.png" alt="" class="startup-info__main-img">
             </div>
 
             <div class="startup-info__img-row">
-              <img src="../../assets/img/sample.png" alt="" class="startup-info__additional-img">
-              <img src="../../assets/img/sample.png" alt="" class="startup-info__additional-img">
-              <img src="../../assets/img/sample.png" alt="" class="startup-info__additional-img">
-              <img src="../../assets/img/sample.png" alt="" class="startup-info__additional-img">
-              <img src="../../assets/img/sample.png" alt="" class="startup-info__additional-img">
+              <img src="../../../assets/img/startup-additional-img.png" alt="" class="startup-info__additional-img">
+              <img src="../../../assets/img/startup-additional-img.png" alt="" class="startup-info__additional-img">
+              <img src="../../../assets/img/startup-additional-img.png" alt="" class="startup-info__additional-img">
+              <img src="../../../assets/img/startup-additional-img.png" alt="" class="startup-info__additional-img">
+              <img src="../../../assets/img/startup-additional-img.png" alt="" class="startup-info__additional-img">
             </div>
 
           </div>
@@ -65,7 +66,7 @@
 
             <div class="startup-info__likes">
               <svg width="34" height="31">
-                <use href="../../assets/img/icons.svg#heart"></use>
+                <use href="../../../assets/img/icons.svg#heart"></use>
               </svg>
 
               <p>2001</p>
@@ -87,7 +88,7 @@
 
               <button class="startup-info__btn startup-info__btn--outline button">
                 <svg width="13" height="20">
-                  <use href="../../assets/img/icons.svg#button-favorite"></use>
+                  <use href="../../../assets/img/icons.svg#button-favorite"></use>
                 </svg>
 
                 Сохранить
@@ -109,16 +110,16 @@
               </div>
 
               <div class="tab-description__text">
-                Благодаря этому шкафчику, все ваши вещи будут сложены аккуратно и будут в порядке и чистоте.
-                Благодаря этому шкафчику, все ваши вещи будут сложены аккуратно и будут в порядке и чистоте.
+                Полный курс по JavaScript - с нуля до результата. Полный курс по JavaScript - с нуля до результата.
+                Полный курс по JavaScript
                 <br><br>
-                Благодаря этому шкафчику, все ваши вещи будут сложены аккуратно и будут в порядке и чистоте.
-                Благодаря этому шкафчику, все ваши вещи будут сложены аккуратно и будут в порядке и чистоте.
-                Благодаря этому шкафчику, все ваши вещи будут сложены аккуратно и будут в порядке и чистоте.
-                Благодаря этому шкафчику, все ваши вещи будут сложены аккуратно и будут в порядке и чистоте.
+                Полный курс по JavaScript - с нуля до результата. Полный курс по JavaScript - с нуля до результата.
+                Полный курс по JavaScript Полный курс по JavaScript - с нуля до результата. Полный курс по JavaScript -
+                с нуля до результата. Полный курс по JavaScript Полный курс по JavaScript - с нуля до результата. Полный
+                курс по JavaScript - с нуля до результата. Полный курс по JavaScript
               </div>
 
-              <img src="../../assets/img/tab-desc.png" alt="" class="tab-description__img">
+              <img src="../../../assets/img/tab-desc.png" alt="" class="tab-description__img">
 
             </div>
           </tab>
@@ -143,7 +144,7 @@
                          height="17px"
                          :class="{ 'tab-faq__icon--active': q.show }"
                     >
-                      <use href="../../assets/img/icons.svg#faq-chevron"></use>
+                      <use href="../../../assets/img/icons.svg#faq-chevron"></use>
                     </svg>
 
                   </div>
@@ -180,7 +181,7 @@
                 курс по JavaScript - с нуля до результата. Полный курс по JavaScript
               </div>
 
-              <img src="../../assets/img/tab-desc.png" alt="" class="tab-description__img">
+              <img src="../../../assets/img/tab-desc.png" alt="" class="tab-description__img">
 
             </div>
           </tab>
@@ -190,11 +191,11 @@
               <div class="tab-comments__main">
 
                 <div class="tab-comments__item comment-box">
-                  <div class="comment-box__row">
-                    <img src="../../assets/img/avatar.png" alt="" class="comment-box__avatar">
-                    <div class="comment-box__info">
-                      <div class="comment-box__name">Имя Фамилия</div>
-                      <div class="comment-box__time">2 часа назад</div>
+                  <div class="comment-box__row user-box">
+                    <img src="../../../assets/img/avatar.png" alt="" class="user-box__avatar">
+                    <div class="user-box__info">
+                      <div class="user-box__name">Имя Фамилия</div>
+                      <div class="user-box__time">2 часа назад</div>
                     </div>
                   </div>
 
@@ -202,11 +203,11 @@
                 </div>
 
                 <div class="tab-comments__item comment-box comment-box--author comment-box--reply">
-                  <div class="comment-box__row">
-                    <img src="../../assets/img/avatar.png" alt="" class="comment-box__avatar">
-                    <div class="comment-box__info">
-                      <div class="comment-box__name">Имя Фамилия</div>
-                      <div class="comment-box__time">2 часа назад</div>
+                  <div class="comment-box__row user-box">
+                    <img src="../../../assets/img/avatar.png" alt="" class="user-box__avatar">
+                    <div class="user-box__info">
+                      <div class="user-box__name">Имя Фамилия</div>
+                      <div class="user-box__time">2 часа назад</div>
                     </div>
 
                     <div class="comment-box__label">
@@ -218,11 +219,11 @@
                 </div>
 
                 <div class="tab-comments__item comment-box">
-                  <div class="comment-box__row">
-                    <img src="../../assets/img/avatar.png" alt="" class="comment-box__avatar">
-                    <div class="comment-box__info">
-                      <div class="comment-box__name">Имя Фамилия</div>
-                      <div class="comment-box__time">2 часа назад</div>
+                  <div class="comment-box__row user-box">
+                    <img src="../../../assets/img/avatar.png" alt="" class="user-box__avatar">
+                    <div class="user-box__info">
+                      <div class="user-box__name">Имя Фамилия</div>
+                      <div class="user-box__time">2 часа назад</div>
                     </div>
                   </div>
 
@@ -230,11 +231,11 @@
                 </div>
 
                 <div class="tab-comments__item comment-box comment-box--reply">
-                  <div class="comment-box__row">
-                    <img src="../../assets/img/avatar.png" alt="" class="comment-box__avatar">
-                    <div class="comment-box__info">
-                      <div class="comment-box__name">Имя Фамилия</div>
-                      <div class="comment-box__time">2 часа назад</div>
+                  <div class="comment-box__row user-box">
+                    <img src="../../../assets/img/avatar.png" alt="" class="user-box__avatar">
+                    <div class="user-box__info">
+                      <div class="user-box__name">Имя Фамилия</div>
+                      <div class="user-box__time">2 часа назад</div>
                     </div>
                   </div>
 

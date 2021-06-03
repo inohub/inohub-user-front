@@ -23,8 +23,8 @@ export default {
   },
   data () {
     return {
-      selectedIndex: 0, // the index of the selected tab,
-      tabs: []         // all of the tabs
+      selectedIndex: 0,
+      tabs: []
     }
   },
   created () {
@@ -37,7 +37,6 @@ export default {
     selectTab (i) {
       this.selectedIndex = i
 
-      // loop over all the tabs
       this.tabs.forEach((tab, index) => {
         tab.isActive = (index === i)
       })
@@ -45,7 +44,3 @@ export default {
   }
 }
 </script>
-
-<style lang="css">
-
-</style>

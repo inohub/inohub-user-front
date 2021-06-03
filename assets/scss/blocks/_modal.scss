@@ -1,0 +1,31 @@
+.modal {
+  width: 712px;
+  padding: 60px 25px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.9);
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.07);
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+
+  &__text {
+    @include text-style(3rem, 600, $text-color);
+    line-height: 35px;
+    margin-bottom: 35px;
+  }
+
+  &__btn-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__btn {
+
+    &:not(:last-child) {
+      margin-right: 23px;
+    }
+  }
+}

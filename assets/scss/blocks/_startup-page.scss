@@ -13,6 +13,10 @@
   &__heading-box {
     text-align: center;
     margin-bottom: 35px;
+
+    &--left {
+      text-align: left;
+    }
   }
 
   &__heading {
@@ -23,6 +27,16 @@
   &__subtitle {
     @include text-style(2rem, 400, #545454);
     line-height: 22px;
+  }
+
+  &__row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 35px;
+  }
+
+  &__user-box {
+    margin-right: 60px;
   }
 
   &__wrapper {

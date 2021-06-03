@@ -24,11 +24,17 @@
 
         <div class="auth__input-group">
           <div class="auth__input-box input-box">
-            <input type="text" class="input-box__input" placeholder="E-mail" v-model="email">
+            <input type="text"
+                   class="input-box__input"
+                   placeholder="E-mail"
+                   v-model="email">
           </div>
 
           <div class="auth__input-box input-box">
-            <input type="text" class="input-box__input" placeholder="Пароль" v-model="password">
+            <input type="text"
+                   class="input-box__input"
+                   placeholder="Пароль"
+                   v-model="password">
           </div>
         </div>
 
@@ -73,15 +79,15 @@ export default {
         this.$router.push('/')
       })
       .catch(e => console.log(e))
-    },
-    // test() {
-    //   this.$axios.post('https://api.inohub.kz/api/auth/login', {
-    //     email: this.email,
-    //     password: this.password
-    //   })
-    //   .then(res => console.log(res.data.data.access_token))
-    //   .catch(e => console.log(e))
-    // }
+    }
   }
 }
+// test() {
+//   this.$axios.post('https://api.inohub.kz/api/auth/login', {
+//     email: this.email,
+//     password: this.password
+//   })
+//   .then(res => console.log(res.data.data.access_token))
+//   .catch(e => console.log(e))
+// }
 </script>

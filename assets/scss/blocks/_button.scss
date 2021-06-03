@@ -3,6 +3,17 @@
   height: 62px;
   background-color: $main-color;
   border-radius: 8px;
+  border: 1px solid $main-color;
 
   @include text-style(2rem, 700, $white-color);
+
+  &--outline {
+    background-color: transparent;
+    color: $main-color;
+  }
+
+  &--sm {
+    width: 177px;
+    height: 47px;
+  }
 }
