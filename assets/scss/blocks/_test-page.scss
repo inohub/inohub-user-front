@@ -1,0 +1,136 @@
+.test-page {
+  padding: 50px 0 150px;
+  background-color: #E5E5E5;
+
+  &__container {
+    @extend %container;
+  }
+
+  &__path-history {
+    margin-bottom: 20px;
+  }
+
+  &__heading {
+    @include text-style(3rem, 600, $text-color);
+    margin-bottom: 35px;
+  }
+
+  &__row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    & > * {
+      flex-shrink: 0;
+      flex-grow: 0;
+    }
+  }
+
+  &__left-box {
+    width: 316px;
+    padding: 25px 35px 30px;
+    border-radius: 10px;
+    border: 1px solid #DADADA;
+  }
+
+  &__title {
+    @include text-style(2rem, 500, $text-color);
+    margin-bottom: 20px;
+  }
+
+  &__question-list {
+    display: grid;
+    grid-template-columns: repeat(5, 41px);
+    grid-gap: 10px;
+    margin-bottom: 60px;
+  }
+
+  &__question-number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 52px;
+    border-radius: 3px;
+    background-color: #DADADA;
+    @include text-style(2rem, 400, $white-color);
+    cursor: pointer;
+
+    &--answered {
+      background-color: #9B9B9B;
+    }
+
+    &--checked {
+      background-color: #FFBA49;
+    }
+  }
+
+  &__end-link {
+    @include text-style(2rem, 500, #00B0FC);
+    cursor: pointer;
+  }
+
+  &__right-box {
+    width: 814px;
+  }
+
+  &__question-box {
+    padding: 65px 50px 35px;
+
+    &:nth-child(odd) {
+      background-color: rgba(0, 176, 252, 0.04);
+    }
+
+    &:nth-child(even) {
+      background-color: rgba(0, 176, 252, 0.11);;
+    }
+  }
+
+  &__question-title {
+    margin-bottom: 20px;
+
+    span:first-child {
+      @include text-style(2rem, 700, $text-color);
+      margin-right: 30px;
+    }
+  }
+
+  &__question-text {
+    @include text-style(2rem, 400, $text-color);
+    line-height: 23px;
+  }
+
+  &__question-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  &__flag-icon {
+    margin-right: 17px;
+  }
+
+  &__answer-list {
+    padding-left: 45px;
+  }
+
+  &__answer {
+    display: block;
+    cursor: pointer;
+
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__radio {
+    margin-right: 20px;
+  }
+
+  &__btn {
+    display: block;
+    margin: 45px 0 0 auto;
+  }
+
+  &__result-box {
+    margin-bottom: 60px;
+  }
+}

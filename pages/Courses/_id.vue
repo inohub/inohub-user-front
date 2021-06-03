@@ -59,9 +59,9 @@
                 Удачи!
               </p>
 
-              <button class="startup-info__text-btn button">
+              <nuxt-link to="/Test/1" tag="button" class="startup-info__text-btn button">
                 Начать тест
-              </button>
+              </nuxt-link>
 
             </div>
 

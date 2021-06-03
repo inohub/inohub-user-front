@@ -1,0 +1,84 @@
+.event-page {
+  padding: 22px 0 60px;
+  background-color: #E5E5E5;
+
+  &__container {
+    @extend %container;
+  }
+
+  &__path-history {
+    margin-bottom: 34px;
+  }
+
+  &__heading-box {
+    text-align: center;
+    margin-bottom: 35px;
+  }
+
+  &__heading {
+    @include text-style(3rem, 600, $text-color);
+    margin-bottom: 20px;
+  }
+
+  &__subtitle {
+    @include text-style(2rem, 400, #545454);
+    line-height: 22px;
+  }
+
+  &__img {
+    display: block;
+    margin: 0 auto 46px;
+  }
+
+  &__row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+
+  &__item {
+    @include text-style(3rem, 600, #545454);
+    display: flex;
+    align-items: center;
+
+    svg {
+      margin-right: 10px;
+    }
+
+    &:not(:last-child) {
+      padding-right: 28px;
+      border-right: 1px solid #9B9B9B;
+      margin-right: 30px;
+    }
+
+    &--purple {
+      color: $main-color;
+    }
+
+    &--text-sm {
+      font-size: 2rem;
+    }
+  }
+
+  &__info {
+    padding: 35px 65px 80px;
+    border-radius: 10px;
+    border: 1px solid #DADADA;
+  }
+
+  &__title {
+    @include text-style(3.6rem, 600, #000000);
+    margin-bottom: 20px;
+  }
+
+  &__text {
+    @include text-style(1.8rem, 400, #545454);
+    line-height: 21px;
+    margin-bottom: 40px;
+  }
+
+  &__info-img {
+    display: block;
+    margin: 0 auto;
+  }
+}

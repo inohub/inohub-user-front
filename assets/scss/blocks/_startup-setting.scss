@@ -1,0 +1,76 @@
+.startup-setting {
+  padding: 25px 0 85px;
+  background-color: #f4f4f4;
+
+  &__container {
+    @extend %container;
+  }
+
+  &__path-history {
+    margin-bottom: 25px;
+  }
+
+  &__heading {
+    @include text-style(3rem, 600, $main-color);
+    margin-bottom: 50px;
+    text-align: center;
+  }
+
+  &__row {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  &__tabs {
+    width: 285px;
+    margin-right: 40px;
+  }
+
+  &__right {
+    width: 690px;
+    border-radius: 6px;
+    border: 1px solid #DADADA;
+    padding: 35px 30px 80px;
+  }
+
+  &__main {
+
+  }
+
+  &__title {
+    @include text-style(2.4rem, 400, $text-color);
+    margin-bottom: 30px;
+  }
+
+  &__download-box {
+    width: 285px;
+    height: 160px;
+    border-radius: 6px;
+    border: 1px solid #FFBA49;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 38px;
+
+    svg {
+      width: 54px;
+      height: 36px;
+      margin-bottom: 17px;
+    }
+
+    span {
+      @include text-style(1.4rem, 600, $main-color);
+    }
+  }
+
+  &__input-box {
+    margin-bottom: 25px;
+  }
+
+  &__btn {
+    display: block;
+    margin-left: auto;
+  }
+}
