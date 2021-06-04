@@ -1,14 +1,21 @@
 <template>
   <div class="test-page">
+
+    <div class="test-page__loader loader" v-if="isLoading">
+      <img src="../../assets/img/icons/loader.svg" alt="">
+
+      <p>Загрузка...</p>
+    </div>
+
     <div class="test-page__container">
 
       <div class="test-page__path-history path-history">
-        <div class="path-history__item">Программирование</div>
-        <div class="path-history__item">JavaScript</div>
+        <div class="path-history__item">Inohub</div>
+        <div class="path-history__item">Стартап</div>
       </div>
 
       <h3 class="test-page__heading">
-        Полный курс по JavaScript - с нуля до результата.
+        {{test.name}}
       </h3>
 
       <div class="test-page__row">
@@ -66,7 +73,7 @@
 
               <div class="test-page__question-title">
                 <span>{{ key + 1 }}</span>
-                <span class="test-page__question-text">{{ q.text }} asdas</span>
+                <span class="test-page__question-text">{{ q.text }}</span>
               </div>
 
               <div class="test-page__question-row">
@@ -116,6 +123,7 @@
 
 <script>
 export default {
+  middleware: ['check-auth', 'auth'],
   data() {
     return {
       modalOpen: false,
@@ -123,7 +131,9 @@ export default {
       answer: [],
       all: [],
       questions: [],
-      loading: false
+      loading: false,
+      test: {},
+      isLoading: true
     };
   },
   mounted() {
@@ -133,7 +143,9 @@ export default {
     getTest() {
       this.$axios.get(process.env.API_URL + `tests/${this.$route.params.id}`)
         .then(resp => {
+          this.test = resp.data.data;
           this.questions = resp.data.data.questions;
+          this.isLoading = false
         })
         .catch(err => {
           console.log(err)

@@ -163,11 +163,15 @@
               Назад
             </button>
 
-            <button class="startup-register__btn button" @click="nextStep" v-if="step !== '3'">
+            <button class="startup-register__btn button" @click="nextStep" v-if="step === '1'">
               Дальше
             </button>
 
-            <button class="startup-register__btn button" @click="sendStartup" v-else>
+            <button class="startup-register__btn button" @click="goToStep3" v-if="step === '2'">
+              Дальше
+            </button>
+
+            <button class="startup-register__btn button" @click="sendStartup" v-if="step === '3'">
               Завершить
             </button>
           </div>
@@ -193,18 +197,19 @@
 
         <div class="result-box__info">
           <div class="result-box__title">
-            Проект успешно отправлен <br>
-            на модерацию!
+            А вы уже прошли курс <br>
+            “Стартап с нуля”?
           </div>
 
           <div class="result-box__text">
-            Следите за почтой, в скором времени <br>
-            мы с вами свяжемся
+            Чтобы твое начало было максимально эффективным, <br>
+            мы подготовили для тебя мини курс. <br>
+            Ждем тебя с результатами!
           </div>
 
           <div class="result-box__btn-group">
 
-            <nuxt-link to="/" tag="button" class="result-box__btn button-blue">
+            <nuxt-link to="/Courses" tag="button" class="result-box__btn button-blue">
               Круто!
             </nuxt-link>
 
@@ -239,7 +244,7 @@ export default {
       categoryToggle: false,
       stageChosen: '',
       stageToggle: false,
-      step: '3',
+      step: '1',
       validationMessage: '',
       texts: [
         {
@@ -282,10 +287,14 @@ export default {
 
       if (this.step === '2') {
         if (this.texts.length !== 0) {
-          this.step = '3'
+          // this.step = '3'
           this.validationMessage = ''
         }
       }
+    },
+
+    goToStep3() {
+      this.step = '3'
     },
 
     prevStep() {

@@ -85,6 +85,7 @@ import RowSlider from "@/components/RowSlider";
 
 Swiper.use([Pagination, Navigation]);
 export default {
+  middleware: ['check-auth'],
   components: {
     ColumnSlider,
     RowSlider

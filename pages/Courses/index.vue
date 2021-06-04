@@ -1,5 +1,12 @@
 <template>
   <div class="main">
+
+    <div class="startup-page__loader loader" v-if="isLoading">
+      <img src="../../assets/img/icons/loader.svg" alt="">
+
+      <p>Загрузка...</p>
+    </div>
+
     <section class="main__section welcome-section welcome-section--orange-bg">
       <div class="welcome-section__container">
         <div class="welcome-section__info">
@@ -22,11 +29,12 @@
           </div>
         </div>
 
-        <img src="../../assets/img/welcome-section-finger.png" alt="" class="welcome-section__side-person">
+        <img src="../../assets/img/welcome-section-girl.png" alt="" class="welcome-section__side-person">
       </div>
     </section>
 
-    <column-slider class="main__section" :data="loadedCourses" field2="description" field1="name" link="Courses"></column-slider>
+    <column-slider class="main__section" :data="loadedCourses" field2="description" field1="name"
+                   link="Courses" title="Курс дня"></column-slider>
 
     <section class="main__section fluid-section">
       <div class="fluid-section__container">
@@ -73,7 +81,7 @@
 <!--                           class="swiper-slide course-card"-->
 <!--                           v-for="(s, i) in loadedCourses"-->
 <!--                           :key="s.id">-->
-<!--                  <img src="../../assets/img/course-img.png" alt="" class="course-card__img">-->
+<!--                  <img src="../../assets/img/course-about-about-about-img2.png" alt="" class="course-card__img">-->
 
 <!--                  <div class="course-card__info">-->
 <!--                    <div class="course-card__header">-->

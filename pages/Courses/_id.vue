@@ -1,5 +1,12 @@
 <template>
   <div class="startup-page">
+
+    <div class="startup-page__loader loader" v-if="isLoading">
+      <img src="../../assets/img/icons/loader.svg" alt="">
+
+      <p>Загрузка...</p>
+    </div>
+
     <div class="startup-page__container">
 
       <div class="startup-page__path-history path-history">
@@ -285,7 +292,8 @@ export default {
       testIsActive: false,
       course: {},
       lesson: [],
-      chosenLesson: 0
+      chosenLesson: 0,
+      isLoading: true
     }
   },
   methods: {
@@ -324,6 +332,7 @@ export default {
       .then(response => {
         this.lesson = response.data.data.data
         console.log(response.data.data.data)
+        this.isLoading = false
       })
       .catch(e => console.log(e))
   }

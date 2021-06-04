@@ -33,16 +33,16 @@
           <div class="startup-info__images">
 
             <div class="startup-info__img-box">
-              <img src="../../../assets/img/startup-main-img.png" alt="" class="startup-info__main-img">
+              <img :src="course.image_url" alt="" class="startup-info__main-img">
             </div>
 
-            <div class="startup-info__img-row">
-              <img src="../../../assets/img/startup-additional-img.png" alt="" class="startup-info__additional-img">
-              <img src="../../../assets/img/startup-additional-img.png" alt="" class="startup-info__additional-img">
-              <img src="../../../assets/img/startup-additional-img.png" alt="" class="startup-info__additional-img">
-              <img src="../../../assets/img/startup-additional-img.png" alt="" class="startup-info__additional-img">
-              <img src="../../../assets/img/startup-additional-img.png" alt="" class="startup-info__additional-img">
-            </div>
+<!--            <div class="startup-info__img-row">-->
+<!--              <img src="../../../assets/img/startup-additional-about-about-about-img2.png" alt="" class="startup-info__additional-img">-->
+<!--              <img src="../../../assets/img/startup-additional-about-about-about-img2.png" alt="" class="startup-info__additional-img">-->
+<!--              <img src="../../../assets/img/startup-additional-about-about-about-img2.png" alt="" class="startup-info__additional-img">-->
+<!--              <img src="../../../assets/img/startup-additional-about-about-about-img2.png" alt="" class="startup-info__additional-img">-->
+<!--              <img src="../../../assets/img/startup-additional-about-about-about-img2.png" alt="" class="startup-info__additional-img">-->
+<!--            </div>-->
 
           </div>
 
@@ -121,7 +121,7 @@
                 {{ text.content }}
               </div>
 
-              <img src="../../../assets/img/tab-desc.png" alt="" class="tab-description__img">
+              <img :src="course.image_url" alt="" class="tab-description__img">
 
             </div>
           </tab>
@@ -179,7 +179,7 @@
                 {{ t.content }}
               </div>
 
-              <img src="../../../assets/img/tab-desc.png" alt="" class="tab-description__img">
+              <img :src="course.image_url" alt="" class="tab-description__img">
 
             </div>
           </tab>

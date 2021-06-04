@@ -14,6 +14,16 @@
     @include text-style(3rem, 600, $text-color);
     line-height: 35px;
     margin-bottom: 35px;
+
+    &--mb20 {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__subtitle {
+    @include text-style(2rem, 400, $text-color);
+    line-height: 23px;
+    margin-bottom: 35px;
   }
 
   &__btn-group {

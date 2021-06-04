@@ -61,7 +61,7 @@
             </div>
 
             <div class="certificate__name">
-              {{ user.first_name + ' ' + user.last_name }}
+              Matilda Brown
             </div>
 
             <div class="certificate__text">

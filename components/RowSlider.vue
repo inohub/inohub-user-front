@@ -22,7 +22,7 @@
                          class="swiper-slide course-card"
                          v-for="(s, i) in data"
                          :key="s.id">
-                <img src="../assets/img/course-img.png" alt="" class="course-card__img">
+                <img :src="s.image_url" alt="" class="course-card__img">
 
                 <div class="course-card__info">
                   <div class="course-card__header">

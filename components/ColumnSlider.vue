@@ -3,9 +3,9 @@
     <div class="cards-section__container">
       <div class="cards-section__top-of-day">
         <div class="cards-section__row">
-          <h4 class="cards-section__title">Мероприятие дня</h4>
+          <h4 class="cards-section__title">{{ title }}</h4>
         </div>
-        <div class="cards-section__card card">
+        <nuxt-link tag="div" to="/Courses/1" class="cards-section__card card">
 
           <img src="../assets/img/card-img.png" alt="" class="card__img">
 
@@ -32,7 +32,7 @@
             </svg>
           </div>
 
-        </div>
+        </nuxt-link>
 
       </div>
 
@@ -40,7 +40,6 @@
 
         <div class="cards-section__row">
           <h4 class="cards-section__title">Рекомендованное вам</h4>
-          <button class="cards-section__btn button-outline">Смотреть все</button>
         </div>
 
         <div class="cards-section__slide-wrapper">
@@ -50,7 +49,7 @@
 
               <nuxt-link tag="div" :to="'/' + link + '/' + item.id" class="swiper-slide card card--sm"
                          v-for="item in data" :key="item.id">
-                <img src="../assets/img/card-img-sm.png" alt="" class="card__img">
+                <img :src="item.image_url" alt="" class="card__img">
 
                 <div class="card__info">
                   <div class="card__text-box">
