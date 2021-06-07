@@ -48,14 +48,15 @@
 
             <div class="startup-register__input-box startup-input">
               <label class="startup-input__label">Краткое описание<span>*</span></label>
-              <textarea class="startup-input__textarea" v-model="desc"></textarea>
+              <textarea class="startup-input__textarea" v-model="subtitle"></textarea>
             </div>
 
             <div class="startup-register__input-box startup-input">
               <label class="startup-input__label">Категория<span>*</span></label>
 
               <div class="startup-input__input-box" @click="toggleCategory">
-                <input type="text" class="startup-input__input" readonly :placeholder="categoryChosen">
+                <input type="text" class="startup-input__input" readonly :placeholder="categoryChosen"
+                       :value="chCategory.title">
 
                 <svg width="11" height="16" class="startup-input__icon"
                      :class="{'startup-input__icon--active' : categoryToggle}">
@@ -64,26 +65,25 @@
               </div>
 
               <div class="startup-input__dropdown" :class="{'startup-input__dropdown--active' : categoryToggle}">
-                <div class="startup-input__item" @click="chooseCategory('ИТ')">ИТ</div>
-                <div class="startup-input__item" @click="chooseCategory('Игры')">Игры</div>
-                <div class="startup-input__item" @click="chooseCategory('Музыка')">Музыка</div>
-                <div class="startup-input__item" @click="chooseCategory('Бизнес')">Бизнес</div>
+                <div class="startup-input__item" v-for="category in categories" @click="chooseCategory(category)">
+                  {{ category.title }}
+                </div>
               </div>
             </div>
 
             <div class="startup-register__input-box startup-input">
-              <label class="startup-input__label">Теги<span>*</span></label>
+              <label class="startup-input__label">Теги</label>
               <input type="text" class="startup-input__input" v-model="tags">
             </div>
 
             <div class="startup-register__input-box startup-input">
-              <label class="startup-input__label">Город<span>*</span></label>
+              <label class="startup-input__label">Город</label>
               <input type="text" class="startup-input__input" v-model="city">
             </div>
 
             <div class="startup-register__input-box startup-input">
               <label class="startup-input__label">Необходимая сумма<span>*</span></label>
-              <input type="text" class="startup-input__input" v-model="sum">
+              <input type="text" class="startup-input__input" v-model="donation_amount">
             </div>
 
             <div class="startup-register__input-box startup-input">
@@ -115,23 +115,28 @@
 
         <div class="startup-register__second" v-if="step === '2'">
 
-          <div class="startup-register__input-box startup-input">
-            <label class="startup-input__label">Заголовок<span>*</span></label>
-            <input type="text" class="startup-input__input" v-model="title">
-          </div>
+          <div v-for="text in texts">
+            <div class="startup-register__input-box startup-input">
+              <label class="startup-input__label">Заголовок<span>*</span></label>
+              <input type="text" class="startup-input__input" v-model="text.title">
+            </div>
 
-          <div class="startup-register__input-box startup-input">
-            <label class="startup-input__label">Текст<span>*</span></label>
-            <textarea class="startup-input__textarea startup-input__textarea--big" v-model="text"></textarea>
+            <div class="startup-register__input-box startup-input">
+              <label class="startup-input__label">Текст<span>*</span></label>
+              <textarea class="startup-input__textarea startup-input__textarea--big" v-model="text.content"></textarea>
+            </div>
           </div>
+          <button class="startup-register__btn button" @click="addText">
+            +Еще
+          </button>
 
-          <div class="startup-register__download-box">
-            <svg width="108" height="72">
-              <use href="../../assets/img/icons.svg#cloud"></use>
-            </svg>
+          <!--          <div class="startup-register__download-box">-->
+          <!--            <svg width="108" height="72">-->
+          <!--              <use href="../../assets/img/icons.svg#cloud"></use>-->
+          <!--            </svg>-->
 
-            <span>Загрузить файл</span>
-          </div>
+          <!--            <span>Загрузить файл</span>-->
+          <!--          </div>-->
         </div>
 
         <div class="startup-register__third" v-if="step === '3'">
@@ -158,11 +163,15 @@
               Назад
             </button>
 
-            <button class="startup-register__btn button" @click="nextStep" v-if="step !== '3'">
+            <button class="startup-register__btn button" @click="nextStep" v-if="step === '1'">
               Дальше
             </button>
 
-            <button class="startup-register__btn button" @click="sendStartup" v-else>
+            <button class="startup-register__btn button" @click="goToStep3" v-if="step === '2'">
+              Дальше
+            </button>
+
+            <button class="startup-register__btn button" @click="sendStartup" v-if="step === '3'">
               Завершить
             </button>
           </div>
@@ -188,18 +197,19 @@
 
         <div class="result-box__info">
           <div class="result-box__title">
-            Проект успешно отправлен <br>
-            на модерацию!
+            А вы уже прошли курс <br>
+            “Стартап с нуля”?
           </div>
 
           <div class="result-box__text">
-            Следите за почтой, в скором времени <br>
-            мы с вами свяжемся
+            Чтобы твое начало было максимально эффективным, <br>
+            мы подготовили для тебя мини курс. <br>
+            Ждем тебя с результатами!
           </div>
 
           <div class="result-box__btn-group">
 
-            <nuxt-link to="/" tag="button" class="result-box__btn button-blue">
+            <nuxt-link to="/Courses" tag="button" class="result-box__btn button-blue">
               Круто!
             </nuxt-link>
 
@@ -216,13 +226,16 @@
 
 <script>
 export default {
+  middleware: ['check-auth', 'auth'],
   data() {
     return {
       name: '',
-      desc: '',
+      subtitle: '',
+      chCategory: {},
+      categories: [],
       tags: '',
       city: '',
-      sum: '',
+      donation_amount: '',
       title: '',
       text: '',
       question: '',
@@ -231,8 +244,15 @@ export default {
       categoryToggle: false,
       stageChosen: '',
       stageToggle: false,
-      step: '3',
-      validationMessage: ''
+      step: '1',
+      validationMessage: '',
+      texts: [
+        {
+          title: 'О нас',
+          content: 'Что то про нас'
+        }
+      ],
+      loading : false
     };
   },
   methods: {
@@ -240,8 +260,8 @@ export default {
       this.categoryToggle = !this.categoryToggle
     },
 
-    chooseCategory(str) {
-      this.categoryChosen = str
+    chooseCategory(category) {
+      this.chCategory = category
       this.categoryToggle = false
     },
 
@@ -256,22 +276,25 @@ export default {
 
     nextStep() {
       if (this.step === '1') {
-        if (this.name !== '' && this.desc !== '' && this.tags !== '' && this.city !== '' && this.sum !== '' && this.categoryChosen !== '' && this.stageChosen !== '') {
+        if (this.name !== '' && this.subtitle !== '' && this.donation_amount !== '' && this.chCategory !== '' && this.stageChosen !== '') {
           this.step = '2'
           this.validationMessage = ''
+          console.log(this.name, this.subtitle, this.donation_amount, this.chCategory.id)
         } else {
           this.validationMessage = 'Пожалуйста, заполните все обязательные поля (*)'
         }
       }
 
       if (this.step === '2') {
-        if (this.title !== '' && this.text !== '') {
-          this.step = '3'
+        if (this.texts.length !== 0) {
+          // this.step = '3'
           this.validationMessage = ''
-        } else {
-          this.validationMessage = 'Пожалуйста, заполните все обязательные поля (*)'
         }
       }
+    },
+
+    goToStep3() {
+      this.step = '3'
     },
 
     prevStep() {
@@ -284,14 +307,50 @@ export default {
     },
 
     sendStartup() {
-      this.step = ''
+      this.loading = true;
 
-      // POST
+      let data = {
+        category_id : this.chCategory.id,
+        name: this.name,
+        subtitle : this.subtitle,
+        donation_amount : this.donation_amount,
+        texts: this.texts
+      }
+
+      this.$axios.post(process.env.API_URL + 'startups', data, {
+        headers: {
+          Authorization: `Bearer ${this.$store.state.token}`
+        }
+      })
+        .then(resp => {
+          console.log(resp)
+          this.step = ''
+        })
+        .catch(err => {
+          console.log(err)
+        })
+
     },
+    getCategories() {
+      this.$axios.get(process.env.API_URL + 'categories')
+        .then(resp => {
+          this.categories = resp.data.data.data;
+        })
+        .catch(err => {
+          console.log(err);
+        })
+    },
+    addText() {
+      this.texts.push({
+        content: '',
+        title: ''
+      })
+    }
   },
 
   mounted() {
     this.step = '1'
+    this.getCategories()
   }
 }
 </script>

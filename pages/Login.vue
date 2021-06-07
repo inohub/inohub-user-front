@@ -13,50 +13,55 @@
         </p>
       </div>
 
-      <div class="auth__box">
+      <form @submit.prevent="login" class="auth__box">
         <div class="auth__title">
           Войти
         </div>
 
         <div class="auth__text">
-          Новый пользователь? <a href="#" class="auth__link">Создать учетную запись</a>
+          Новый пользователь?
+          <nuxt-link to="/Register" tag="a" class="auth__link">Создать учетную запись</nuxt-link>
         </div>
 
         <div class="auth__input-group">
           <div class="auth__input-box input-box">
-            <input type="text"
+            <input type="email"
                    class="input-box__input"
                    placeholder="E-mail"
                    v-model="email">
           </div>
 
           <div class="auth__input-box input-box">
-            <input type="text"
+            <input type="password"
                    class="input-box__input"
                    placeholder="Пароль"
                    v-model="password">
           </div>
         </div>
 
-        <button class="auth__btn" @click="login">Войти</button>
-
-        <div class="auth__text">
-          Или войдите через
+        <div class="auth__text auth__text--error">
+          {{ errorMessage }}
         </div>
 
-        <div class="auth__socials">
-          <div class="auth__social">
-            <svg width="22" height="22">
-              <use href="../assets/img/icons.svg#google-colored"></use>
-            </svg>
-          </div>
-          <div class="auth__social">
-            <svg width="22" height="22">
-              <use href="../assets/img/icons.svg#facebook-colored"></use>
-            </svg>
-          </div>
-        </div>
-      </div>
+        <button class="auth__btn">Войти</button>
+
+        <!--        <div class="auth__text">-->
+        <!--          Или войдите через-->
+        <!--        </div>-->
+
+        <!--        <div class="auth__socials">-->
+        <!--          <div class="auth__social">-->
+        <!--            <svg width="22" height="22">-->
+        <!--              <use href="../assets/img/icons.svg#google-colored"></use>-->
+        <!--            </svg>-->
+        <!--          </div>-->
+        <!--          <div class="auth__social">-->
+        <!--            <svg width="22" height="22">-->
+        <!--              <use href="../assets/img/icons.svg#facebook-colored"></use>-->
+        <!--            </svg>-->
+        <!--          </div>-->
+        <!--        </div>-->
+      </form>
     </div>
   </section>
 </template>
@@ -66,7 +71,8 @@ export default {
   data() {
     return {
       email: "",
-      password: ""
+      password: "",
+      errorMessage: ""
     };
   },
   methods: {
@@ -75,10 +81,12 @@ export default {
         email: this.email,
         password: this.password
       })
-      .then(() => {
-        this.$router.push('/')
-      })
-      .catch(e => console.log(e))
+        .then(() => {
+          this.$router.push('/')
+        })
+        .catch(e => {
+          console.log(e)
+        })
     }
   }
 }

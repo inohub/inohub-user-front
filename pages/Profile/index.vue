@@ -23,15 +23,18 @@
 
             <div class="side-tabs__tab"
                  @click="chooseTab('about')"
-                 :class="{'side-tabs__tab--active' : chosenTab === 'about'}">Обо мне</div>
+                 :class="{'side-tabs__tab--active' : chosenTab === 'about'}">Обо мне
+            </div>
             <div class="side-tabs__tab"
                  @click="chooseTab('projects')"
-                 :class="{'side-tabs__tab--active' : chosenTab === 'projects'}">Мои проекты</div>
+                 :class="{'side-tabs__tab--active' : chosenTab === 'projects'}">Мои проекты
+            </div>
             <div class="side-tabs__tab"
                  @click="chooseTab('courses')"
-                 :class="{'side-tabs__tab--active' : chosenTab === 'courses'}">Мои курсы</div>
+                 :class="{'side-tabs__tab--active' : chosenTab === 'courses'}">Мои курсы
+            </div>
             <nuxt-link to="Profile/Settings/" tag="div" class="side-tabs__tab">Настройки</nuxt-link>
-            <div class="side-tabs__tab">Выйти</div>
+            <div class="side-tabs__tab" @click="logout">Выйти</div>
 
           </div>
 
@@ -526,6 +529,10 @@ export default {
   methods: {
     chooseTab(str) {
       this.chosenTab = str
+    },
+    logout() {
+      this.$store.dispatch('logout')
+      this.$router.push('/')
     }
   },
   mounted() {

@@ -1,14 +1,21 @@
 <template>
   <div class="test-page">
+
+    <div class="test-page__loader loader" v-if="isLoading">
+      <img src="../../assets/img/icons/loader.svg" alt="">
+
+      <p>Загрузка...</p>
+    </div>
+
     <div class="test-page__container">
 
       <div class="test-page__path-history path-history">
-        <div class="path-history__item">Программирование</div>
-        <div class="path-history__item">JavaScript</div>
+        <div class="path-history__item">Inohub</div>
+        <div class="path-history__item">Стартап</div>
       </div>
 
       <h3 class="test-page__heading">
-        Полный курс по JavaScript - с нуля до результата.
+        {{test.name}}
       </h3>
 
       <div class="test-page__row">
@@ -19,7 +26,7 @@
           </div>
 
           <div class="test-page__question-list">
-            <div class="test-page__question-number" v-for="i in 20">
+            <div class="test-page__question-number" v-for="i in questions.length">
               {{ i }}
             </div>
           </div>
@@ -30,62 +37,65 @@
         </div>
 
         <div class="test-page__right-box">
-          <div class="test-page__question-box" v-for="i in 5">
 
-            <div class="test-page__question-title">
-              <span>1.</span>
-              <span class="test-page__question-text">
-                Полный курс по JavaScript - с нуля до результата. Полный курс по JavaScript - с нуля до результата.
-              </span>
-            </div>
+          <div v-for="(q,key) in questions">
 
-            <div class="test-page__question-row">
-              <svg width="29" height="29" class="test-page__flag-icon">
-                <use href="../../assets/img/icons.svg#flag-yellow"></use>
-              </svg>
+            <div class="test-page__question-box" v-show="q.type==='multiple'">
 
-              <span class="test-page__question-text">
-                Выберите несколько ответов:
-              </span>
-            </div>
+              <div class="test-page__question-title">
+                <span>{{ key + 1 }}.</span>
+                <span class="test-page__question-text">{{ q.text }}</span>
+              </div>
 
-            <div class="test-page__answer-list">
+              <div class="test-page__question-row">
 
-              <label class="test-page__answer">
-                <input type="radio" name="answer1" value="kek" class="test-page__radio">
-                <span class="test-page__question-text">
-                  34
-                </span>
-              </label>
+                <svg width="29" height="29" class="test-page__flag-icon">
+                  <use href="../../assets/img/icons.svg#flag-yellow"></use>
+                </svg>
 
-              <label class="test-page__answer">
-                <input type="radio" name="answer1" value="kek" class="test-page__radio">
-                <span class="test-page__question-text">
-                  35
-                </span>
-              </label>
+                <span class="test-page__question-text">Выберите несколько ответов:</span>
 
-              <label class="test-page__answer">
-                <input type="radio" name="answer1" value="kek" class="test-page__radio">
-                <span class="test-page__question-text">
-                  36
-                </span>
-              </label>
+              </div>
 
-              <label class="test-page__answer">
-                <input type="radio" name="answer1" value="kek" class="test-page__radio">
-                <span class="test-page__question-text">
-                  37
-                </span>
-              </label>
+              <div class="test-page__answer-list">
+
+                <label class="test-page__answer" v-for="v in q.content">
+                  <input type="radio" :name="q.id" :value="v.id" v-model="q.userCheck" class="test-page__radio">
+                  <span class="test-page__question-text">
+                    {{ v.text }}
+                  </span>
+                </label>
+              </div>
 
             </div>
+
+            <div class="test-page__question-box" v-show="q.type==='open'">
+
+              <div class="test-page__question-title">
+                <span>{{ key + 1 }}</span>
+                <span class="test-page__question-text">{{ q.text }}</span>
+              </div>
+
+              <div class="test-page__question-row">
+                <svg width="29" height="29" class="test-page__flag-icon">
+                  <use href="../../assets/img/icons.svg#flag-yellow"></use>
+                </svg>
+
+                <span class="test-page__question-text">Ответ:</span>
+              </div>
+
+              <input type="text" class="test-page__input" v-model="q.user_answer">
+
+            </div>
+
           </div>
 
           <button class="test-page__btn button" @click="modalOpen = true">
             Завершить тест
           </button>
+
         </div>
+
       </div>
 
     </div>
@@ -101,7 +111,7 @@
           Назад
         </button>
 
-        <button class="modal__btn button-blue button-blue--white" @click="$router.push('Result')">
+        <button class="modal__btn button-blue button-blue--white" @click="pass">
           Завершить
         </button>
       </div>
@@ -113,13 +123,74 @@
 
 <script>
 export default {
+  middleware: ['check-auth', 'auth'],
   data() {
     return {
-      modalOpen: false
+      modalOpen: false,
+      variants: [],
+      answer: [],
+      all: [],
+      questions: [],
+      loading: false,
+      test: {},
+      isLoading: true
     };
   },
+  mounted() {
+    this.getTest()
+  },
   methods: {
+    getTest() {
+      this.$axios.get(process.env.API_URL + `tests/${this.$route.params.id}`)
+        .then(resp => {
+          this.test = resp.data.data;
+          this.questions = resp.data.data.questions;
+          this.isLoading = false
+        })
+        .catch(err => {
+          console.log(err)
+        })
+    },
+    pass() {
+      this.loading = true;
 
+      let data = {
+        test_id: parseInt(this.$route.params.id),
+        answers: [],
+      }
+
+      let token = localStorage.getItem('token')
+
+      this.questions.forEach((q) => {
+        if (q.type === 'multiple') {
+          data.answers.push({
+            question_id: q.id,
+            variant_id: q.userCheck
+          })
+        } else {
+          data.answers.push({
+            question_id: q.id,
+            answer_text: q.user_answer
+          })
+        }
+      });
+
+
+      this.$axios.post(process.env.API_URL + `user-test-results`, data, {
+        headers: {Authorization: `Bearer ${token}`}
+      })
+        .then(resp => {
+          let score = (resp.data.data.correct / resp.data.data.total) * 100;
+          localStorage.setItem('score',score);
+          localStorage.setItem('totalQ',resp.data.data.total);
+          localStorage.setItem('correctQ',resp.data.data.correct);
+
+          this.$router.push('/Test/Result')
+        })
+        .catch(err => {
+          console.log(err)
+        })
+    }
   }
 }
 </script>

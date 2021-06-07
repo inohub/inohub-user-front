@@ -46,6 +46,10 @@
     @include text-style(1.6rem, 400, $text-color);
     text-align: center;
     margin-bottom: 18px;
+
+    &--error {
+      color: #ea1e1e;
+    }
   }
 
   &__link:link,

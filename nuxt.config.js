@@ -35,6 +35,7 @@ export default {
   ** https://nuxtjs.org/guide/plugins
   */
   plugins: [
+    '~/plugins/axios',
     {src: "~/plugins/defaultPlugin", mode: "client"},
   ],
   /*
@@ -68,6 +69,7 @@ export default {
     //     strategy: 'prefix_except_default',
     //   }
     // ]
+    '@nuxtjs/google-analytics'
   ],
   /*
   ** Nuxt.js modules
@@ -76,12 +78,12 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
+
   ],
   /*
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
   */
-  axios: {},
   /*
   ** Build configuration
   ** See https://nuxtjs.org/api/configuration-build/
@@ -90,9 +92,18 @@ export default {
     name: 'fade',
     mode: 'out-in'
   },
+
+  env: {
+    API_URL: 'https://api.inohub.kz/api/'
+    // API_URL: 'http://inohub-api.test/api/'
+  },
+
   build: {},
   router: {
     linkActiveClass: 'active_link',
     linkExactActiveClass: 'exact_active_link',
+  },
+  googleAnalytics: {
+    id: 'G-KBR0DKYHL2'
   },
 }

@@ -4,7 +4,14 @@ import Cookie from 'js-cookie'
 const createStore = () => {
   return new Vuex.Store({
     state: {
-      token: null
+      token: process.browser ? localStorage.getItem('token') : '',
+      loadedStartups: [],
+      loadedCategories: [],
+      loadedCourses: [],
+      testScore: 0,
+      testTotal: 0,
+      testSuccess: 0,
+      user: {}
     },
     mutations: {
       setToken(state, token) {
@@ -12,11 +19,49 @@ const createStore = () => {
       },
       clearToken(state) {
         state.token = null
+      },
+      setStartups(state, info) {
+        state.loadedStartups = info
+      },
+      setCategories(state, info) {
+        state.loadedCategories = info
+      },
+      setCourses(state, info) {
+        state.loadedCourses = info
+      },
+      setUser(state, info) {
+        state.user = info;
+      },
+      clearUser(state, info) {
+        state.user = {};
       }
     },
     actions: {
+      async nuxtServerInit(VuexContext, context) {
+        const startupsResponses = await context.$axios.get(process.env.API_URL + 'startups?relation[category]&search[status]=exact|3')
+        VuexContext.commit('setStartups', startupsResponses.data.data.data)
+
+        const categoryResponses = await context.$axios.get(process.env.API_URL + 'categories')
+        VuexContext.commit('setCategories', categoryResponses.data.data.data)
+
+        const coursesResponses = await context.$axios.get(process.env.API_URL + 'courses')
+        VuexContext.commit('setCourses', coursesResponses.data.data.data)
+      },
+
+      setStartups(vuexContext, info) {
+        vuexContext.commit('setStartups', info)
+      },
+
+      setCategories(vuexContext, info) {
+        vuexContext.commit('setCategories', info)
+      },
+
+      setCourses(vuexContext, info) {
+        vuexContext.commit('setCourses', info)
+      },
+
       authenticateUser(vuexContext, authData) {
-        let authUrl = "https://api.inohub.kz/api/auth/login"
+        let authUrl = process.env.API_URL + "auth/login"
         return this.$axios.$post(authUrl,
           {
             email: authData.email,
@@ -32,6 +77,7 @@ const createStore = () => {
               'expirationDate',
               new Date().getTime() + Number.parseInt(result.data.expires_in) * 1000
             )
+
           })
           .catch(e => console.log(e))
       },
@@ -79,7 +125,29 @@ const createStore = () => {
     },
     getters: {
       isAuthenticated(state) {
-        return state.token != null
+        // return state.token === null
+        return state.token ? true : false;
+      },
+
+      loadedStartups(state) {
+        return state.loadedStartups
+      },
+
+      loadedCategories(state) {
+        return state.loadedCategories
+      },
+
+      loadedCourses(state) {
+        return state.loadedCourses
+      },
+      getTestScore(state) {
+        return state.testScore
+      },
+      getTestTotal(state) {
+        return state.testTotal
+      },
+      getTestSuccess(state) {
+        return state.testSuccess
       }
     }
   })

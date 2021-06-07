@@ -1,5 +1,12 @@
 <template>
   <div class="startup-page">
+
+    <div class="startup-page__loader loader" v-if="isLoading">
+      <img src="../../assets/img/icons/loader.svg" alt="">
+
+      <p>Загрузка...</p>
+    </div>
+
     <div class="startup-page__container">
 
       <div class="startup-page__path-history path-history">
@@ -10,35 +17,34 @@
       <div class="startup-page__heading-box startup-page__heading-box--left">
 
         <h3 class="startup-page__heading">
-          Полный курс по JavaScript - с нуля до результата.
+          {{ course.name }}
         </h3>
 
         <p class="startup-page__subtitle">
-          Полный курс по JavaScript - с нуля до результата. Полный курс по JavaScript - с нуля до результата. Полный
-          курс по JavaScript
+          {{ course.description }}
         </p>
 
       </div>
 
-      <div class="startup-page__row">
+      <!--      <div class="startup-page__row">-->
 
-        <div class="startup-page__user-box user-box user-box--border-right">
-          <img src="../../assets/img/avatar.png" alt="" class="user-box__avatar">
-          <div class="user-box__info">
-            <div class="user-box__name">Имя Фамилия</div>
-            <div class="user-box__time">2 часа назад</div>
-          </div>
-        </div>
+      <!--        <div class="startup-page__user-box user-box user-box&#45;&#45;border-right">-->
+      <!--          <img src="../../assets/img/avatar.png" alt="" class="user-box__avatar">-->
+      <!--          <div class="user-box__info">-->
+      <!--            <div class="user-box__name">Имя Фамилия</div>-->
+      <!--            <div class="user-box__time">2 часа назад</div>-->
+      <!--          </div>-->
+      <!--        </div>-->
 
-        <button class="startup-info__btn startup-info__btn--outline button button--sm">
-          <svg width="13" height="20">
-            <use href="../../assets/img/icons.svg#button-favorite"></use>
-          </svg>
+      <!--        <button class="startup-info__btn startup-info__btn&#45;&#45;outline button button&#45;&#45;sm">-->
+      <!--          <svg width="13" height="20">-->
+      <!--            <use href="../../assets/img/icons.svg#button-favorite"></use>-->
+      <!--          </svg>-->
 
-          Сохранить
-        </button>
+      <!--          Сохранить-->
+      <!--        </button>-->
 
-      </div>
+      <!--      </div>-->
 
       <div class="startup-page__wrapper startup-info">
 
@@ -59,14 +65,18 @@
                 Удачи!
               </p>
 
-              <nuxt-link to="/Test/1" tag="button" class="startup-info__text-btn button">
+              <nuxt-link :to="'/Test/'+ lesson[lesson.length - 1].id" tag="button" class="startup-info__text-btn button">
                 Начать тест
               </nuxt-link>
 
             </div>
 
-            <div class="startup-info__img-box" v-else>
-              <img src="../../assets/img/startup-main-img.png" alt="" class="startup-info__main-img">
+            <div class="startup-info__img-box" v-else v-for="(l, i) in lesson" v-show="chosenLesson === i">
+              <iframe width="560" height="315" :src="l.video_url"
+                      class="startup-info__main-img"
+                      title="YouTube video player" frameborder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowfullscreen></iframe>
             </div>
 
           </div>
@@ -75,34 +85,21 @@
 
             <div class="course-progress">
               <div class="course-progress__title">
-                12 уроков (300 мин)
+                {{ lesson.length }} уроков
 
                 <span>25%</span>
               </div>
 
               <div class="course-progress__list">
 
-                <div class="course-progress__item course-progress__item--checked" @click="testIsActive = false">
-                  <span>1. Введение</span>
+                <div class="course-progress__item"
+                     :class="{'course-progress__item--current' : chosenLesson === i}"
+                     @click="chooseLesson(i)" v-for="(l, i) in lesson">
+                  <span>{{ i + 1 }}. {{ l.name }}</span>
                   <span>13:10</span>
                 </div>
 
-                <div class="course-progress__item course-progress__item--checked" @click="testIsActive = false">
-                  <span>2. Интерфейс</span>
-                  <span>13:10</span>
-                </div>
-
-                <div class="course-progress__item course-progress__item--current" @click="testIsActive = false">
-                  <span>3. Переменные</span>
-                  <span>13:10</span>
-                </div>
-
-                <div class="course-progress__item" v-for="i in 10" @click="testIsActive = false">
-                  <span>{{ i + 3 }}. Введение</span>
-                  <span>13:10</span>
-                </div>
-
-                <div class="course-progress__item" @click="testIsActive = true">
+                <div class="course-progress__item" @click="chooseTest">
                   <span>Итоговый тест</span>
                 </div>
 
@@ -118,29 +115,25 @@
 
           <tabs class="startup-info__tabs tabs tabs--fixed-width">
             <tab title="Описание">
-              <div class="tab__content tab-description">
 
-                <div class="tab-description__row">
-                  <div class="tab-description__title">
-                    О курсе
+              <div class="tab__content tab-description" v-for="(l, i) in lesson" v-show="chosenLesson === i">
+
+                <div v-for="text in l.texts">
+                  <div class="tab-description__row">
+                    <div class="tab-description__title">
+                      {{ text.title }}
+                    </div>
                   </div>
-                </div>
 
-                <div class="tab-description__text">
-                  Полный курс по JavaScript - с нуля до результата. Полный курс по JavaScript - с нуля до результата.
-                  Полный курс по JavaScript
-                  <br><br>
-                  Полный курс по JavaScript - с нуля до результата. Полный курс по JavaScript - с нуля до результата.
-                  Полный курс по JavaScript Полный курс по JavaScript - с нуля до результата. Полный курс по JavaScript
-                  -
-                  с нуля до результата. Полный курс по JavaScript Полный курс по JavaScript - с нуля до результата.
-                  Полный
-                  курс по JavaScript - с нуля до результата. Полный курс по JavaScript
-                </div>
+                  <div class="tab-description__text">
+                    {{ text.content }}
+                  </div>
 
+                </div>
                 <img src="../../assets/img/tab-desc.png" alt="" class="tab-description__img">
 
               </div>
+
             </tab>
             <tab title="Материалы">
 
@@ -165,11 +158,12 @@
                 <div class="tab-description__materials course-materials">
 
 
-                  <div class="course-materials__item" :class="{'course-materials__item--active' : materialToggle}">
+                  <div class="course-materials__item"
+                       :class="{'course-materials__item--active' : materialIdx === i}" v-for="(l, i) in lesson">
 
                     <div class="course-materials__row">
 
-                      <div class="course-materials__title">Урок #1</div>
+                      <div class="course-materials__title">Урок #{{ i + 1 }}</div>
 
                       <div class="course-materials__icon-group">
 
@@ -177,7 +171,7 @@
                           <use href="../../assets/img/icons.svg#download"></use>
                         </svg>
 
-                        <svg class="course-materials__icon" width="11" height="16" @click="toggleMaterial">
+                        <svg class="course-materials__icon" width="11" height="16" @click="chooseMaterial(i)">
                           <use href="../../assets/img/icons.svg#material-chevron"></use>
                         </svg>
 
@@ -276,7 +270,7 @@
         </div>
       </div>
 
-      <row-slider class="courses-section--grey-bg"></row-slider>
+      <row-slider class="courses-section--grey-bg" :data-p="loadedStartups" field2="subtitle" field1="name"></row-slider>
     </div>
   </div>
 </template>
@@ -294,41 +288,53 @@ export default {
   },
   data() {
     return {
-      faq: [
-        {
-          show: false,
-          title: "Законно ли это?",
-          text: "Да, конечно законно. Ты что дурачок???",
-        },
-        {
-          show: false,
-          title: "Законно ли это?",
-          text: "Да, конечно законно. Ты что дурачок???",
-        },
-        {
-          show: false,
-          title: "Законно ли это?",
-          text: "Да, конечно законно. Ты что дурачок???",
-        },
-      ],
-
-      materialToggle: false,
-      testIsActive: false
+      materialIdx: null,
+      testIsActive: false,
+      course: {},
+      lesson: [],
+      chosenLesson: 0,
+      isLoading: true
     }
   },
   methods: {
-    toggle(index) {
-      this.faq[index].show = !this.faq[index].show;
-      for (let i = 0; i < this.faq.length; i++) {
-        if (this.faq[i] !== this.faq[index]) {
-          this.faq[i].show = false;
-        }
-      }
-    },
-
     toggleMaterial() {
       this.materialToggle = !this.materialToggle
+    },
+    chooseLesson(idx) {
+      this.chosenLesson = idx
+      this.testIsActive = false
+    },
+    chooseMaterial(idx) {
+      this.materialIdx = idx
+    },
+    chooseTest() {
+      this.chosenLesson = null
+      this.testIsActive = true
+      this.materialIdx = null
     }
+  },
+
+  computed: {
+    loadedStartups() {
+      return this.$store.getters.loadedStartups
+    }
+  },
+
+  mounted() {
+    this.$axios.get(process.env.API_URL + 'courses/' + this.$route.params.id)
+      .then(response => {
+        console.log(response.data.data)
+        this.course = response.data.data
+      })
+      .catch(e => console.log(e))
+
+    this.$axios.get(process.env.API_URL + 'lessons?search[course_id]=exact|1&relation[texts]')
+      .then(response => {
+        this.lesson = response.data.data.data
+        console.log(response.data.data.data)
+        this.isLoading = false
+      })
+      .catch(e => console.log(e))
   }
 }
 </script>

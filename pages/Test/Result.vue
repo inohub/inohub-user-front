@@ -15,7 +15,7 @@
 
         <div class="result-box__row">
           <div class="result-box__num">
-            56%
+            {{ score }}%
           </div>
 
           <div class="result-box__info">
@@ -25,7 +25,7 @@
             </div>
 
             <div class="result-box__score">
-              <span>16</span> / 40
+              <span>{{ correctQ }}</span> / {{ totalQ }}
             </div>
 
             <div class="result-box__download">
@@ -61,11 +61,11 @@
             </div>
 
             <div class="certificate__name">
-              Имя фамилия
+              Matilda Brown
             </div>
 
             <div class="certificate__text">
-              Успешно прошел курс <br> с результатом <span>86%</span>
+              Успешно прошел курс <br> с результатом <span>{{score}}%</span>
             </div>
 
             <div class="certificate__title certificate__title--m0">
@@ -77,7 +77,7 @@
             </div>
 
             <div class="certificate__date">
-              15 ИЮЛЯ, 2021
+              04 ИЮНЯ, 2021
             </div>
 
           </div>
@@ -90,3 +90,48 @@
 
   </div>
 </template>
+
+
+<script>
+export default {
+  name: "Result",
+  mounted() {
+    this.getUser();
+  },
+  middleware: ['check-auth', 'auth'],
+  data() {
+    return {
+      user: {}
+    }
+  },
+  methods: {
+    getUser() {
+      this.$axios.get(process.env.API_URL + 'auth/me', {
+        headers: {
+          Authorization: `Bearer ${this.$store.state.token}`
+        }
+      })
+        .then(resp => {
+          this.user = resp.data
+        })
+        .catch(err => {
+          console.log(err)
+        })
+    }
+  },
+  computed: {
+    score() {
+      if (process.browser)
+        return localStorage.getItem('score')
+    },
+    totalQ() {
+      if (process.browser)
+        return localStorage.getItem('totalQ')
+    },
+    correctQ() {
+      if (process.browser)
+        return localStorage.getItem('correctQ')
+    }
+  }
+}
+</script>

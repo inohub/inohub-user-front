@@ -13,13 +13,14 @@
         </p>
       </div>
 
-      <div class="auth__box">
+      <form @submit.prevent="register" class="auth__box">
         <div class="auth__title">
           Зарегистрироваться
         </div>
 
         <div class="auth__text">
-          Уже есть аккаунт? <a href="#" class="auth__link">Войти</a>
+          Уже есть аккаунт?
+          <nuxt-link to="/Login" tag="a" class="auth__link">Войти</nuxt-link>
         </div>
 
         <div class="auth__input-group">
@@ -28,37 +29,48 @@
           <!--          </div>-->
 
           <div class="auth__input-box input-box">
-            <input type="text" class="input-box__input" placeholder="Email" v-model="email">
+            <input type="email" class="input-box__input"
+                   placeholder="Email"
+                   v-model="email">
           </div>
 
           <div class="auth__input-box input-box">
-            <input type="text" class="input-box__input" placeholder="Пароль" v-model="password">
+            <input type="password" class="input-box__input"
+                   placeholder="Пароль"
+                   v-model="password">
           </div>
 
           <div class="auth__input-box input-box">
-            <input type="text" class="input-box__input" placeholder="Подтверждение пароля">
+            <input type="password" class="input-box__input"
+                   placeholder="Подтверждение пароля" v-model="password2">
           </div>
         </div>
 
-        <button class="auth__btn" @click="register">Зарегистрироваться</button>
-
-        <div class="auth__text">
-          Или зарегистрируйтесь через
+        <div class="auth__text auth__text--error">
+          {{ errorMessage }}
         </div>
 
-        <div class="auth__socials">
-          <div class="auth__social">
-            <svg width="22" height="22">
-              <use href="../assets/img/icons.svg#google-colored"></use>
-            </svg>
-          </div>
-          <div class="auth__social">
-            <svg width="22" height="22">
-              <use href="../assets/img/icons.svg#facebook-colored"></use>
-            </svg>
-          </div>
-        </div>
-      </div>
+        <button class="auth__btn">Зарегистрироваться</button>
+
+        <!--        <div class="auth__text">-->
+        <!--          Или зарегистрируйтесь через-->
+        <!--        </div>-->
+
+        <!--        <div class="auth__socials">-->
+        <!--          <div class="auth__social">-->
+        <!--            <svg width="22" height="22">-->
+        <!--              <use href="../assets/img/icons.svg#google-colored"></use>-->
+        <!--            </svg>-->
+        <!--          </div>-->
+        <!--          <div class="auth__social">-->
+        <!--            <svg width="22" height="22">-->
+        <!--              <use href="../assets/img/icons.svg#facebook-colored"></use>-->
+        <!--            </svg>-->
+        <!--          </div>-->
+        <!--        </div>-->
+
+      </form>
+
     </div>
   </section>
 </template>
@@ -69,24 +81,35 @@ export default {
     return {
       email: "",
       password: "",
+      password2: "",
       errorMessage: "",
       data: ""
     };
   },
   methods: {
     register() {
-      this.$axios.post("https://api.inohub.kz/api/auth/registration", {
-        email: this.email,
-        password: this.password
-      })
-        .then(response => {
-          this.data = response;
-          console.log(response);
+      if (this.password.length < 6) {
+        this.errorMessage = 'Пароль должен содержать не менее 6 символов'
+      }
+      if (this.password !== this.password2) {
+        this.errorMessage = 'Пароли не совпадают'
+      }
+      if (this.password.length > 5 && this.password === this.password2) {
+        this.$axios.post("https://api.inohub.kz/api/auth/registration", {
+          email: this.email,
+          password: this.password,
+          role_slug: 'guest'
         })
-        .catch(error => {
-          this.errorMessage = error.message;
-          console.log("ERROR!", error.message);
-        });
+          .then(response => {
+            this.data = response;
+            console.log(response);
+            this.$router.push('/')
+          })
+          .catch(error => {
+            // this.errorMessage = error.message;
+            console.log("ERROR!", error.message);
+          });
+      }
     }
   }
 }

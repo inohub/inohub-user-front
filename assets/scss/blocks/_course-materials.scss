@@ -8,6 +8,10 @@
     border-radius: 7px;
     border-left: 17px solid #DADADA;
 
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+
     &--active {
 
       border-color: $main-color;

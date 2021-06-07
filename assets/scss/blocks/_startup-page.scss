@@ -1,6 +1,11 @@
 .startup-page {
   padding: 22px 0 60px;
   background-color: #E5E5E5;
+  position: relative;
+
+  &__loader {
+
+  }
 
   &__container {
     @extend %container;

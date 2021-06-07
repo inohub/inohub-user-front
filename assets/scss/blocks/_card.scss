@@ -29,10 +29,17 @@
       @include text-style(1.1rem, 400, $text-color);
       line-height: 13px;
     }
+
+    #{$e}__img {
+      width: 222px;
+      height: 125px;
+      flex-shrink: 0;
+    }
   }
 
   &__img {
-
+    width: 541px;
+    height: 309px;
   }
 
   &__info {

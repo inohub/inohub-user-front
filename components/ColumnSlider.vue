@@ -3,16 +3,16 @@
     <div class="cards-section__container">
       <div class="cards-section__top-of-day">
         <div class="cards-section__row">
-          <h4 class="cards-section__title">Мероприятие дня</h4>
+          <h4 class="cards-section__title">{{ title }}</h4>
         </div>
-        <div class="cards-section__card card">
+        <nuxt-link tag="div" to="/Courses/1" class="cards-section__card card">
 
           <img src="../assets/img/card-img.png" alt="" class="card__img">
 
           <div class="card__info">
             <div class="card__row">
               <div class="card__path link-path">
-                <p>Мероприятия</p>
+                <p>{{ title }}</p>
                 <p>Design & media</p>
               </div>
 
@@ -32,7 +32,7 @@
             </svg>
           </div>
 
-        </div>
+        </nuxt-link>
 
       </div>
 
@@ -40,139 +40,39 @@
 
         <div class="cards-section__row">
           <h4 class="cards-section__title">Рекомендованное вам</h4>
-          <button class="cards-section__btn button-outline">Смотреть все</button>
         </div>
 
         <div class="cards-section__slide-wrapper">
 
           <div class="swiper-container cards-section__swiper-container">
             <div class="swiper-wrapper">
-              <div class="swiper-slide card card--sm">
-                <img src="../assets/img/card-img-sm.png" alt="" class="card__img">
+
+              <nuxt-link tag="div" :to="'/' + link + '/' + item.id" class="swiper-slide card card--sm"
+                         v-for="item in data" :key="item.id">
+                <img :src="item.image_url" alt="" class="card__img">
 
                 <div class="card__info">
                   <div class="card__text-box">
-                    <h3 class="card__title">Полный курс JavaScript
-                      - с нуля до результата.</h3>
+                    <h3 class="card__title">{{ item[field1] }}</h3>
                     <p class="card__desc">
-                      Короткое описание проекта
-                      еще на одну строку
+                      {{ item[field2] }}
                     </p>
                   </div>
 
-                  <a href="#" class="card__link">Категория</a>
+                  <div class="card__link">Категория</div>
 
                   <svg class="card__favorite" width="11" height="18">
                     <use href="../assets/img/icons.svg#favorite"></use>
                   </svg>
                 </div>
-              </div>
-              <div class="swiper-slide card card--sm">
-                <img src="../assets/img/card-img-sm.png" alt="" class="card__img">
+              </nuxt-link>
 
-                <div class="card__info">
-                  <div class="card__text-box">
-                    <h3 class="card__title">Полный курс JavaScript
-                      - с нуля до результата.</h3>
-                    <p class="card__desc">
-                      Короткое описание проекта
-                      еще на одну строку
-                    </p>
-                  </div>
-
-                  <a href="#" class="card__link">Категория</a>
-
-                  <svg class="card__favorite" width="11" height="18">
-                    <use href="../assets/img/icons.svg#favorite"></use>
-                  </svg>
-                </div>
-              </div>
-              <div class="swiper-slide card card--sm">
-                <img src="../assets/img/card-img-sm.png" alt="" class="card__img">
-
-                <div class="card__info">
-                  <div class="card__text-box">
-                    <h3 class="card__title">Полный курс JavaScript
-                      - с нуля до результата.</h3>
-                    <p class="card__desc">
-                      Короткое описание проекта
-                      еще на одну строку
-                    </p>
-                  </div>
-
-                  <a href="#" class="card__link">Категория</a>
-
-                  <svg class="card__favorite" width="11" height="18">
-                    <use href="../assets/img/icons.svg#favorite"></use>
-                  </svg>
-                </div>
-              </div>
-              <div class="swiper-slide card card--sm">
-                <img src="../assets/img/card-img-sm.png" alt="" class="card__img">
-
-                <div class="card__info">
-                  <div class="card__text-box">
-                    <h3 class="card__title">Полный курс JavaScript
-                      - с нуля до результата.</h3>
-                    <p class="card__desc">
-                      Короткое описание проекта
-                      еще на одну строку
-                    </p>
-                  </div>
-
-                  <a href="#" class="card__link">Категория</a>
-
-                  <svg class="card__favorite" width="11" height="18">
-                    <use href="../assets/img/icons.svg#favorite"></use>
-                  </svg>
-                </div>
-              </div>
-              <div class="swiper-slide card card--sm">
-                <img src="../assets/img/card-img-sm.png" alt="" class="card__img">
-
-                <div class="card__info">
-                  <div class="card__text-box">
-                    <h3 class="card__title">Полный курс JavaScript
-                      - с нуля до результата.</h3>
-                    <p class="card__desc">
-                      Короткое описание проекта
-                      еще на одну строку
-                    </p>
-                  </div>
-
-                  <a href="#" class="card__link">Категория</a>
-
-                  <svg class="card__favorite" width="11" height="18">
-                    <use href="../assets/img/icons.svg#favorite"></use>
-                  </svg>
-                </div>
-              </div>
-              <div class="swiper-slide card card--sm">
-                <img src="../assets/img/card-img-sm.png" alt="" class="card__img">
-
-                <div class="card__info">
-                  <div class="card__text-box">
-                    <h3 class="card__title">Полный курс JavaScript
-                      - с нуля до результата.</h3>
-                    <p class="card__desc">
-                      Короткое описание проекта
-                      еще на одну строку
-                    </p>
-                  </div>
-
-                  <a href="#" class="card__link">Категория</a>
-
-                  <svg class="card__favorite" width="11" height="18">
-                    <use href="../assets/img/icons.svg#favorite"></use>
-                  </svg>
-                </div>
-              </div>
             </div>
             <!-- Add Pagination -->
             <div class="swiper-pagination cards-section__pagination"></div>
-            <!-- Add Arrows -->
-            <div class="swiper-button-next cards-section__next"></div>
-            <div class="swiper-button-prev cards-section__prev"></div>
+            <!--            &lt;!&ndash; Add Arrows &ndash;&gt;-->
+            <!--            <div class="swiper-button-next cards-section__next"></div>-->
+            <!--            <div class="swiper-button-prev cards-section__prev"></div>-->
           </div>
 
         </div>
@@ -187,6 +87,13 @@ import Swiper, {Pagination, Navigation} from 'swiper';
 Swiper.use([Pagination, Navigation]);
 
 export default {
+  props: {
+    data: Array,
+    field1: String,
+    field2: String,
+    title: String,
+    link: String
+  },
   mounted() {
     let swiper1 = new Swiper('.cards-section__swiper-container', {
       slidesPerView: 1,
@@ -197,10 +104,10 @@ export default {
         el: '.cards-section__pagination',
         clickable: true,
       },
-      navigation: {
-        nextEl: '.cards-section__next',
-        prevEl: '.cards-section__prev',
-      },
+      // navigation: {
+      //   nextEl: '.cards-section__next',
+      //   prevEl: '.cards-section__prev',
+      // },
     });
   }
 }

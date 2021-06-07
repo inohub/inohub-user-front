@@ -15,12 +15,9 @@
           </p>
 
           <div class="welcome-section__btn-group">
-            <button class="welcome-section__btn button">
+            <nuxt-link to="/About" tag="button" class="welcome-section__btn button">
               Подробнее
-            </button>
-            <button class="welcome-section__btn button">
-              С чего начать?
-            </button>
+            </nuxt-link>
           </div>
         </div>
 
@@ -28,7 +25,7 @@
       </div>
     </section>
 
-    <column-slider class="main__section"></column-slider>
+    <column-slider class="main__section" :data="loadedStartups" field1="name" field2="subtitle" title="Мероприятие" link="Events"></column-slider>
 
     <section class="main__section fluid-section">
       <div class="fluid-section__container">
@@ -39,13 +36,12 @@
           </h2>
 
           <div class="fluid-section__btn-group">
-            <button class="fluid-section__btn button">
+            <nuxt-link to="/Courses" tag="button" class="fluid-section__btn button">
               С чего начать?
-            </button>
-            <button class="fluid-section__btn button">
+            </nuxt-link>
+            <nuxt-link to="/Startups/Register" tag="button" class="fluid-section__btn button">
               Загрузить
-
-            </button>
+            </nuxt-link>
           </div>
         </div>
 
@@ -53,7 +49,7 @@
       </div>
     </section>
 
-    <row-slider class="main__section"></row-slider>
+    <row-slider class="main__section" :data-p="loadedStartups" field1="name" field2="subtitle" title="стартапы" link="Startups"></row-slider>
 
     <section class="main__section fluid-section fluid-section--purple">
       <div class="fluid-section__container">
@@ -77,7 +73,7 @@
       </div>
     </section>
 
-    <column-slider class="main__section"></column-slider>
+    <column-slider class="main__section" :data="loadedStartups" field1="name" field2="subtitle" title="Мероприятие" link="Startups"></column-slider>
 
   </main>
 </template>
@@ -89,13 +85,19 @@ import RowSlider from "@/components/RowSlider";
 
 Swiper.use([Pagination, Navigation]);
 export default {
+  middleware: ['check-auth'],
   components: {
     ColumnSlider,
     RowSlider
   },
 
   mounted() {
-
+    console.log(this.loadedStartups)
+  },
+  computed: {
+    loadedStartups() {
+      return this.$store.getters.loadedStartups;
+    }
   }
 };
 </script>
@@ -103,3 +105,5 @@ export default {
 <style lang="scss">
 
 </style>
+
+
