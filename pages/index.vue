@@ -44,6 +44,7 @@
             </button>
             <button class="fluid-section__btn button">
               Загрузить
+
             </button>
           </div>
         </div>
